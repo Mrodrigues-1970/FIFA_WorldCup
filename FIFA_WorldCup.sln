@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FIFA_WorldCup", "FIFA_WorldCup\FIFA_WorldCup.csproj", "{9964C72D-805E-4BD8-8AAC-6AF9AEC3D4C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9964C72D-805E-4BD8-8AAC-6AF9AEC3D4C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9964C72D-805E-4BD8-8AAC-6AF9AEC3D4C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9964C72D-805E-4BD8-8AAC-6AF9AEC3D4C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9964C72D-805E-4BD8-8AAC-6AF9AEC3D4C3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8A1AF09F-F262-4A0C-982D-833652E51E53}
+	EndGlobalSection
+EndGlobal

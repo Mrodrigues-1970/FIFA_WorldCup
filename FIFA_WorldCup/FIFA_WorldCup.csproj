@@ -1,0 +1,714 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9964C72D-805E-4BD8-8AAC-6AF9AEC3D4C3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FIFA_WorldCup</RootNamespace>
+    <AssemblyName>FIFA_WorldCup</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>128Telstar.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dal\DalBase.cs" />
+    <Compile Include="Dal\DalCopa.cs" />
+    <Compile Include="Dal\DalDesempate.cs" />
+    <Compile Include="Dal\DalDtoGrupoCopa.cs" />
+    <Compile Include="Dal\DalDtoPartidasGrupo.cs" />
+    <Compile Include="Dal\DalEstatistica.cs" />
+    <Compile Include="Dal\DalGrupo.cs" />
+    <Compile Include="Dal\DalLigacao.cs" />
+    <Compile Include="Dal\DalLocal.cs" />
+    <Compile Include="Dal\DalPais.cs" />
+    <Compile Include="Dal\DalParticipante.cs" />
+    <Compile Include="Dal\DalPartida.cs" />
+    <Compile Include="Dal\DalPartidaTreeview.cs" />
+    <Compile Include="Dal\DalRankingGeral.cs" />
+    <Compile Include="Dal\DalResultado.cs" />
+    <Compile Include="Dal\DalSede.cs" />
+    <Compile Include="Dal\DalTipoFase.cs" />
+    <Compile Include="Dal\DalVagas.cs" />
+    <Compile Include="Entidades\Competicao.cs" />
+    <Compile Include="Entidades\Confederacao.cs" />
+    <Compile Include="Entidades\ConfrontoConfederacao.cs" />
+    <Compile Include="Entidades\ConfrontoPais.cs" />
+    <Compile Include="Entidades\Conquista.cs" />
+    <Compile Include="Entidades\Copa.cs" />
+    <Compile Include="Entidades\Desempate.cs" />
+    <Compile Include="Entidades\dtoGrupoCopa.cs" />
+    <Compile Include="Entidades\Estatistica.cs" />
+    <Compile Include="Entidades\GlobalVariables.cs" />
+    <Compile Include="Entidades\Grupo.cs" />
+    <Compile Include="Entidades\Ligacao.cs" />
+    <Compile Include="Entidades\Local.cs" />
+    <Compile Include="Entidades\NocauteDisponivel.cs" />
+    <Compile Include="Entidades\Pais.cs" />
+    <Compile Include="Entidades\Partida.cs" />
+    <Compile Include="Entidades\PartidaTreeView.cs" />
+    <Compile Include="Entidades\PosicaoResultado.cs" />
+    <Compile Include="Entidades\RankingGeral.cs" />
+    <Compile Include="Entidades\ResultadoCopa.cs" />
+    <Compile Include="Entidades\ResultadoJogo.cs" />
+    <Compile Include="Entidades\Sede.cs" />
+    <Compile Include="Entidades\SimMataMata.cs" />
+    <Compile Include="Entidades\StatusCopa.cs" />
+    <Compile Include="Entidades\TipoDesempate.cs" />
+    <Compile Include="Entidades\TipoFase.cs" />
+    <Compile Include="Entidades\TipoLigacao.cs" />
+    <Compile Include="Entidades\VagaMasculino.cs" />
+    <Compile Include="FIFA_WCDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FIFA_WCDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\dtoPartidasGrupo.cs" />
+    <Compile Include="Forms\frmAnfitrioes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAnfitrioes.Designer.cs">
+      <DependentUpon>frmAnfitrioes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCalculoRankingGeral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCalculoRankingGeral.Designer.cs">
+      <DependentUpon>frmCalculoRankingGeral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCopaLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCopaLista.Designer.cs">
+      <DependentUpon>frmCopaLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmEstatisticas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmEstatisticas.Designer.cs">
+      <DependentUpon>frmEstatisticas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmFaseDetalhe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmFaseDetalhe.Designer.cs">
+      <DependentUpon>frmFaseDetalhe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmFaseGrupos12.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmFaseGrupos12.Designer.cs">
+      <DependentUpon>frmFaseGrupos12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmFaseGrupos2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmFaseGrupos2.Designer.cs">
+      <DependentUpon>frmFaseGrupos2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmFaseGrupos4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmFaseGrupos4.Designer.cs">
+      <DependentUpon>frmFaseGrupos4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmFaseGrupos6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmFaseGrupos6.Designer.cs">
+      <DependentUpon>frmFaseGrupos6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmFaseGrupos8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmFaseGrupos8.Designer.cs">
+      <DependentUpon>frmFaseGrupos8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmFIFARanking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmFIFARanking.Designer.cs">
+      <DependentUpon>frmFIFARanking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmFinal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmFinal.Designer.cs">
+      <DependentUpon>frmFinal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmGrupoDetalhe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmGrupoDetalhe.Designer.cs">
+      <DependentUpon>frmGrupoDetalhe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmGrupoLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmGrupoLista.Designer.cs">
+      <DependentUpon>frmGrupoLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmGrupoPosicaoDetalhe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmGrupoPosicaoDetalhe.Designer.cs">
+      <DependentUpon>frmGrupoPosicaoDetalhe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmLigacaoDetalhe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmLigacaoDetalhe.Designer.cs">
+      <DependentUpon>frmLigacaoDetalhe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmLigacaoLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmLigacaoLista.Designer.cs">
+      <DependentUpon>frmLigacaoLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmLocalDetalhe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmLocalDetalhe.Designer.cs">
+      <DependentUpon>frmLocalDetalhe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmLocalLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmLocalLista.Designer.cs">
+      <DependentUpon>frmLocalLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPaisDetalhe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPaisDetalhe.Designer.cs">
+      <DependentUpon>frmPaisDetalhe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPaisLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPaisLista.Designer.cs">
+      <DependentUpon>frmPaisLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmParticipacoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmParticipacoes.Designer.cs">
+      <DependentUpon>frmParticipacoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmParticipanteLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmParticipanteLista.Designer.cs">
+      <DependentUpon>frmParticipanteLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmParticipantesDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmParticipantesDisplay.Designer.cs">
+      <DependentUpon>frmParticipantesDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPartidaDetalhe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPartidaDetalhe.Designer.cs">
+      <DependentUpon>frmPartidaDetalhe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPartidasLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPartidasLista.Designer.cs">
+      <DependentUpon>frmPartidasLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPerformance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPerformance.Designer.cs">
+      <DependentUpon>frmPerformance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPosterLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPosterLista.Designer.cs">
+      <DependentUpon>frmPosterLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmRanking3Lugar12.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmRanking3Lugar12.Designer.cs">
+      <DependentUpon>frmRanking3Lugar12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmRanking3Lugar6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmRanking3Lugar6.Designer.cs">
+      <DependentUpon>frmRanking3Lugar6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmResultado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmResultado.Designer.cs">
+      <DependentUpon>frmResultado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmResultadoDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmResultadoDisplay.Designer.cs">
+      <DependentUpon>frmResultadoDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSemiFinal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSemiFinal.Designer.cs">
+      <DependentUpon>frmSemiFinal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSimCopaMasculina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSimCopaMasculina.Designer.cs">
+      <DependentUpon>frmSimCopaMasculina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSimuladorQuadrangular.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSimuladorQuadrangular.Designer.cs">
+      <DependentUpon>frmSimuladorQuadrangular.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmTreeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmTreeView.Designer.cs">
+      <DependentUpon>frmTreeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmTreeview32.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmTreeview32.Designer.cs">
+      <DependentUpon>frmTreeview32.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmVagasDetalhe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmVagasDetalhe.Designer.cs">
+      <DependentUpon>frmVagasDetalhe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmVagasLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmVagasLista.Designer.cs">
+      <DependentUpon>frmVagasLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RN\RNCopa.cs" />
+    <Compile Include="RN\RNDesempate.cs" />
+    <Compile Include="RN\RNDtoGrupoCopa.cs" />
+    <Compile Include="RN\RNdtoPartidasGrupo.cs" />
+    <Compile Include="RN\RNEstatistica.cs" />
+    <Compile Include="RN\RNGrupo.cs" />
+    <Compile Include="RN\RNLigacao.cs" />
+    <Compile Include="RN\RNLocal.cs" />
+    <Compile Include="RN\RNPais.cs" />
+    <Compile Include="RN\RNParticipante.cs" />
+    <Compile Include="RN\RNPartida.cs" />
+    <Compile Include="RN\RNPartidaTreeView.cs" />
+    <Compile Include="RN\RNRanking.cs" />
+    <Compile Include="RN\RNRankingGeral.cs" />
+    <Compile Include="RN\RNResultado.cs" />
+    <Compile Include="RN\RNSede.cs" />
+    <Compile Include="RN\RNSimulacaoCopa.cs" />
+    <Compile Include="RN\RNTipoFase.cs" />
+    <Compile Include="RN\RNVaga.cs" />
+    <Compile Include="RN\RNVagas.cs" />
+    <EmbeddedResource Include="Forms\frmAnfitrioes.resx">
+      <DependentUpon>frmAnfitrioes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCalculoRankingGeral.resx">
+      <DependentUpon>frmCalculoRankingGeral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCopaLista.resx">
+      <DependentUpon>frmCopaLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmEstatisticas.resx">
+      <DependentUpon>frmEstatisticas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmFaseDetalhe.resx">
+      <DependentUpon>frmFaseDetalhe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmFaseGrupos12.resx">
+      <DependentUpon>frmFaseGrupos12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmFaseGrupos2.resx">
+      <DependentUpon>frmFaseGrupos2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmFaseGrupos4.resx">
+      <DependentUpon>frmFaseGrupos4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmFaseGrupos6.resx">
+      <DependentUpon>frmFaseGrupos6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmFaseGrupos8.resx">
+      <DependentUpon>frmFaseGrupos8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmFIFARanking.resx">
+      <DependentUpon>frmFIFARanking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmFinal.resx">
+      <DependentUpon>frmFinal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmGrupoDetalhe.resx">
+      <DependentUpon>frmGrupoDetalhe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmGrupoLista.resx">
+      <DependentUpon>frmGrupoLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmGrupoPosicaoDetalhe.resx">
+      <DependentUpon>frmGrupoPosicaoDetalhe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmLigacaoDetalhe.resx">
+      <DependentUpon>frmLigacaoDetalhe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmLigacaoLista.resx">
+      <DependentUpon>frmLigacaoLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmLocalDetalhe.resx">
+      <DependentUpon>frmLocalDetalhe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmLocalLista.resx">
+      <DependentUpon>frmLocalLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPaisDetalhe.resx">
+      <DependentUpon>frmPaisDetalhe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPaisLista.resx">
+      <DependentUpon>frmPaisLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmParticipacoes.resx">
+      <DependentUpon>frmParticipacoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmParticipanteLista.resx">
+      <DependentUpon>frmParticipanteLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmParticipantesDisplay.resx">
+      <DependentUpon>frmParticipantesDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPartidaDetalhe.resx">
+      <DependentUpon>frmPartidaDetalhe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPartidasLista.resx">
+      <DependentUpon>frmPartidasLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPerformance.resx">
+      <DependentUpon>frmPerformance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPosterLista.resx">
+      <DependentUpon>frmPosterLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmRanking3Lugar12.resx">
+      <DependentUpon>frmRanking3Lugar12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmRanking3Lugar6.resx">
+      <DependentUpon>frmRanking3Lugar6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmResultado.resx">
+      <DependentUpon>frmResultado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmResultadoDisplay.resx">
+      <DependentUpon>frmResultadoDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSemiFinal.resx">
+      <DependentUpon>frmSemiFinal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSimCopaMasculina.resx">
+      <DependentUpon>frmSimCopaMasculina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSimuladorQuadrangular.resx">
+      <DependentUpon>frmSimuladorQuadrangular.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmTreeView.resx">
+      <DependentUpon>frmTreeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmTreeview32.resx">
+      <DependentUpon>frmTreeview32.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmVagasDetalhe.resx">
+      <DependentUpon>frmVagasDetalhe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmVagasLista.resx">
+      <DependentUpon>frmVagasLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="FIFA_WCDataSet.xsc">
+      <DependentUpon>FIFA_WCDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FIFA_WCDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FIFA_WCDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FIFA_WCDataSet.xss">
+      <DependentUpon>FIFA_WCDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="128Telstar.ico" />
+    <Content Include="img\Confederacoes\5.png" />
+    <Content Include="img\Confederacoes\4.png" />
+    <Content Include="img\Confederacoes\3.png" />
+    <Content Include="img\Confederacoes\1.png" />
+    <Content Include="img\Confederacoes\6.png" />
+    <Content Include="img\Confederacoes\2.png" />
+    <Content Include="img\ConfederationsCup180.png" />
+    <Content Include="img\FaseDetalhe.jpg" />
+    <Content Include="img\FIFA-WC-Trophy180.png" />
+    <Content Include="img\FIFA-WWC-Trophy180.png" />
+    <Content Include="img\Flags\1.png" />
+    <Content Include="img\Flags\10.png" />
+    <Content Include="img\Flags\100.png" />
+    <Content Include="img\Flags\101.png" />
+    <Content Include="img\Flags\102.png" />
+    <Content Include="img\Flags\103.png" />
+    <Content Include="img\Flags\104.png" />
+    <Content Include="img\Flags\105.png" />
+    <Content Include="img\Flags\106.png" />
+    <Content Include="img\Flags\107.png" />
+    <Content Include="img\Flags\108.png" />
+    <Content Include="img\Flags\109.png" />
+    <Content Include="img\Flags\11.png" />
+    <Content Include="img\Flags\110.png" />
+    <Content Include="img\Flags\111.png" />
+    <Content Include="img\Flags\112.png" />
+    <Content Include="img\Flags\113.png" />
+    <Content Include="img\Flags\114.png" />
+    <Content Include="img\Flags\115.png" />
+    <Content Include="img\Flags\116.png" />
+    <Content Include="img\Flags\117.png" />
+    <Content Include="img\Flags\12.png" />
+    <Content Include="img\Flags\13.png" />
+    <Content Include="img\Flags\14.png" />
+    <Content Include="img\Flags\15.png" />
+    <Content Include="img\Flags\16.png" />
+    <Content Include="img\Flags\17.png" />
+    <Content Include="img\Flags\18.png" />
+    <Content Include="img\Flags\19.png" />
+    <Content Include="img\Flags\2.png" />
+    <Content Include="img\Flags\20.png" />
+    <Content Include="img\Flags\21.png" />
+    <Content Include="img\Flags\22.png" />
+    <Content Include="img\Flags\23.png" />
+    <Content Include="img\Flags\24.png" />
+    <Content Include="img\Flags\25.png" />
+    <Content Include="img\Flags\26.png" />
+    <Content Include="img\Flags\27.png" />
+    <Content Include="img\Flags\28.png" />
+    <Content Include="img\Flags\29.png" />
+    <Content Include="img\Flags\3.png" />
+    <Content Include="img\Flags\30.png" />
+    <Content Include="img\Flags\31.png" />
+    <Content Include="img\Flags\32.png" />
+    <Content Include="img\Flags\33.png" />
+    <Content Include="img\Flags\34.png" />
+    <Content Include="img\Flags\35.png" />
+    <Content Include="img\Flags\36.png" />
+    <Content Include="img\Flags\37.png" />
+    <Content Include="img\Flags\38.png" />
+    <Content Include="img\Flags\39.png" />
+    <Content Include="img\Flags\4.png" />
+    <Content Include="img\Flags\40.png" />
+    <Content Include="img\Flags\41.png" />
+    <Content Include="img\Flags\42.png" />
+    <Content Include="img\Flags\43.png" />
+    <Content Include="img\Flags\44.png" />
+    <Content Include="img\Flags\45.png" />
+    <Content Include="img\Flags\46.png" />
+    <Content Include="img\Flags\47.png" />
+    <Content Include="img\Flags\48.png" />
+    <Content Include="img\Flags\49.png" />
+    <Content Include="img\Flags\5.png" />
+    <Content Include="img\Flags\50.png" />
+    <Content Include="img\Flags\51.png" />
+    <Content Include="img\Flags\52.png" />
+    <Content Include="img\Flags\53.png" />
+    <Content Include="img\Flags\54.png" />
+    <Content Include="img\Flags\55.png" />
+    <Content Include="img\Flags\56.png" />
+    <Content Include="img\Flags\57.png" />
+    <Content Include="img\Flags\58.png" />
+    <Content Include="img\Flags\59.png" />
+    <Content Include="img\Flags\6.png" />
+    <Content Include="img\Flags\60.png" />
+    <Content Include="img\Flags\61.png" />
+    <Content Include="img\Flags\62.png" />
+    <Content Include="img\Flags\63.png" />
+    <Content Include="img\Flags\64.png" />
+    <Content Include="img\Flags\65.png" />
+    <Content Include="img\Flags\66.png" />
+    <Content Include="img\Flags\67.png" />
+    <Content Include="img\Flags\68.png" />
+    <Content Include="img\Flags\69.png" />
+    <Content Include="img\Flags\7.png" />
+    <Content Include="img\Flags\70.png" />
+    <Content Include="img\Flags\71.png" />
+    <Content Include="img\Flags\72.png" />
+    <Content Include="img\Flags\73.png" />
+    <Content Include="img\Flags\74.png" />
+    <Content Include="img\Flags\75.png" />
+    <Content Include="img\Flags\76.png" />
+    <Content Include="img\Flags\77.png" />
+    <Content Include="img\Flags\78.png" />
+    <Content Include="img\Flags\79.png" />
+    <Content Include="img\Flags\8.png" />
+    <Content Include="img\Flags\80.png" />
+    <Content Include="img\Flags\81.png" />
+    <Content Include="img\Flags\82.png" />
+    <Content Include="img\Flags\83.png" />
+    <Content Include="img\Flags\84.png" />
+    <Content Include="img\Flags\85.png" />
+    <Content Include="img\Flags\86.png" />
+    <Content Include="img\Flags\87.png" />
+    <Content Include="img\Flags\88.png" />
+    <Content Include="img\Flags\89.png" />
+    <Content Include="img\Flags\9.png" />
+    <Content Include="img\Flags\90.png" />
+    <Content Include="img\Flags\91.png" />
+    <Content Include="img\Flags\92.png" />
+    <Content Include="img\Flags\93.png" />
+    <Content Include="img\Flags\94.png" />
+    <Content Include="img\Flags\95.png" />
+    <Content Include="img\Flags\96.png" />
+    <Content Include="img\Flags\97.png" />
+    <Content Include="img\Flags\98.png" />
+    <Content Include="img\Flags\99.png" />
+    <Content Include="img\Flags\zzzzzzzzzwhat.png" />
+    <Content Include="img\FundoTreeview32.png" />
+    <Content Include="img\grupo12.jpg" />
+    <Content Include="img\grupo4.jpg" />
+    <Content Include="img\grupo6.jpg" />
+    <Content Include="img\grupo8.jpg" />
+    <Content Include="img\JulesRimet180.png" />
+    <Content Include="img\KO4_JulesRimet.png" />
+    <Content Include="img\KO_JulesRimet.png" />
+    <Content Include="img\KO_WCup.png" />
+    <Content Include="img\Posters\1.jpg" />
+    <Content Include="img\Posters\10.jpg" />
+    <Content Include="img\Posters\11.jpg" />
+    <Content Include="img\Posters\12.jpg" />
+    <Content Include="img\Posters\13.jpg" />
+    <Content Include="img\Posters\14.jpg" />
+    <Content Include="img\Posters\16.jpg" />
+    <Content Include="img\Posters\18.jpg" />
+    <Content Include="img\Posters\2.jpg" />
+    <Content Include="img\Posters\20.jpg" />
+    <Content Include="img\Posters\22.jpg" />
+    <Content Include="img\Posters\24.jpg" />
+    <Content Include="img\Posters\26.jpg" />
+    <Content Include="img\Posters\28.JPG" />
+    <Content Include="img\Posters\3.jpg" />
+    <Content Include="img\Posters\30.JPG" />
+    <Content Include="img\Posters\32.jpg" />
+    <Content Include="img\Posters\33.jpg" />
+    <Content Include="img\Posters\35.jpg" />
+    <Content Include="img\Posters\4.jpg" />
+    <Content Include="img\Posters\5.jpg" />
+    <Content Include="img\Posters\6.jpg" />
+    <Content Include="img\Posters\7.jpg" />
+    <Content Include="img\Posters\8.jpg" />
+    <Content Include="img\Posters\9.jpg" />
+    <Content Include="img\SemiFinal.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
