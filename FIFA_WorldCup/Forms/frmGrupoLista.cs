@@ -21,6 +21,7 @@ namespace FIFA_WorldCup.Forms
             gCopaID = vCopaID;
             AjustaTitulo();
             CarregarGrid();
+            TrataVisibilidadeBotaoPosicoes();
         }
 
         private void AjustaTitulo()
@@ -91,6 +92,28 @@ namespace FIFA_WorldCup.Forms
             {
                 MessageBox.Show("Definir posição só é permitido para a fase de grupos.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void TrataVisibilidadeBotaoPosicoes()
+        {
+            List<Int16> listaAnosCopaComRanking3lugar = new List<Int16>();
+            listaAnosCopaComRanking3lugar.Add(1986);
+            listaAnosCopaComRanking3lugar.Add(1990);
+            listaAnosCopaComRanking3lugar.Add(1994);
+            listaAnosCopaComRanking3lugar.Add(2026);
+            listaAnosCopaComRanking3lugar.Add(2030);
+            listaAnosCopaComRanking3lugar.Add(2034);
+            RNCopa rn = new RNCopa();
+            Copa estaCopa = rn.Sel(gCopaID);
+            if (listaAnosCopaComRanking3lugar.Contains(estaCopa.Ano))
+            {
+                btDefinirPosicao.Visible = true;
+            }
+            else
+            {
+                btDefinirPosicao.Visible = false;
+            }
+
         }
     }
 }

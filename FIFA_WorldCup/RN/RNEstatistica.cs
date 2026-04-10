@@ -87,5 +87,11 @@ namespace FIFA_WorldCup.RN
         }
 
 
+        public List<ConfrontoConfederacao> BuscaConfrontoConfederacao(Int16 PaisID, Competicao competicao)
+        {
+            DalConfrontoConfederacao oDal = new DalConfrontoConfederacao();
+            return oDal.BuscaConfrontoConfederacao(PaisID, competicao);
+        }
+
     }
 }

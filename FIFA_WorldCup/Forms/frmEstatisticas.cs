@@ -28,6 +28,7 @@ namespace FIFA_WorldCup.Forms
             CarregarDadosGerais();
             MontarQuadroTrofeus();
             MontarConfrontos();
+            MontarConfrontosConfederacoes();
         }
 
         private void AlterarTitulo()
@@ -181,23 +182,18 @@ namespace FIFA_WorldCup.Forms
                             oConfronto.GolsSofridos += iConfronto.GolsSofridos;
                         }
 
-
-                        // Confederação
-                        if (ConfederacaoEInedita(listaFinalConfederacoes, oConfronto))
-                        {
-                            ConfrontoConfederacao xConfronto = ConverteConfronto(oConfronto);
-                            listaFinalConfederacoes.Add(xConfronto);
-                        }
-                        else
-                        {
-
-                        }
-
-
                     }
                 }
             }
             grdConfrontos.DataSource = listaFinalPaises;
+        }
+
+        private void MontarConfrontosConfederacoes()
+        {
+            List<ConfrontoConfederacao> lista;
+            RNEstatistica oRN = new RNEstatistica();
+            lista = oRN.BuscaConfrontoConfederacao(gPaisID, Competicao.Masculino);
+            grdConfederacoes.DataSource = lista;
         }
 
         private bool AdversarioEInedito(List<ConfrontoPais> listaFinal, ConfrontoPais vConfronto)

@@ -32,15 +32,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGrupoLista));
             this.lblTitulo = new System.Windows.Forms.Label();
             this.grdMain = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoFaseID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COPA_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnIncluir = new System.Windows.Forms.ToolStripButton();
             this.btnAlterar = new System.Windows.Forms.ToolStripButton();
             this.btnPartidas = new System.Windows.Forms.ToolStripButton();
             this.btnListaCopas = new System.Windows.Forms.ToolStripButton();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoFaseID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COPA_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btDefinirPosicao = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdMain)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -77,6 +77,38 @@
             this.grdMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdMain.Size = new System.Drawing.Size(291, 414);
             this.grdMain.TabIndex = 4;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 50;
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            this.Nome.Width = 200;
+            // 
+            // TipoFaseID
+            // 
+            this.TipoFaseID.DataPropertyName = "TipoFaseID";
+            this.TipoFaseID.HeaderText = "TipoFaseID";
+            this.TipoFaseID.Name = "TipoFaseID";
+            this.TipoFaseID.ReadOnly = true;
+            this.TipoFaseID.Width = 5;
+            // 
+            // COPA_ID
+            // 
+            this.COPA_ID.DataPropertyName = "CopaID";
+            this.COPA_ID.HeaderText = "CopaID";
+            this.COPA_ID.Name = "COPA_ID";
+            this.COPA_ID.ReadOnly = true;
+            this.COPA_ID.Visible = false;
             // 
             // toolStrip1
             // 
@@ -136,45 +168,13 @@
             this.btnListaCopas.Text = "Lista de Copas";
             this.btnListaCopas.Click += new System.EventHandler(this.btnListaCopas_Click);
             // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 50;
-            // 
-            // Nome
-            // 
-            this.Nome.DataPropertyName = "Nome";
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            this.Nome.Width = 200;
-            // 
-            // TipoFaseID
-            // 
-            this.TipoFaseID.DataPropertyName = "TipoFaseID";
-            this.TipoFaseID.HeaderText = "TipoFaseID";
-            this.TipoFaseID.Name = "TipoFaseID";
-            this.TipoFaseID.ReadOnly = true;
-            this.TipoFaseID.Width = 5;
-            // 
-            // COPA_ID
-            // 
-            this.COPA_ID.DataPropertyName = "CopaID";
-            this.COPA_ID.HeaderText = "CopaID";
-            this.COPA_ID.Name = "COPA_ID";
-            this.COPA_ID.ReadOnly = true;
-            this.COPA_ID.Visible = false;
-            // 
             // btDefinirPosicao
             // 
-            this.btDefinirPosicao.Location = new System.Drawing.Point(424, 606);
+            this.btDefinirPosicao.Location = new System.Drawing.Point(396, 607);
             this.btDefinirPosicao.Name = "btDefinirPosicao";
-            this.btDefinirPosicao.Size = new System.Drawing.Size(75, 23);
+            this.btDefinirPosicao.Size = new System.Drawing.Size(159, 23);
             this.btDefinirPosicao.TabIndex = 11;
-            this.btDefinirPosicao.Text = "Posições";
+            this.btDefinirPosicao.Text = "Posições no Grupo";
             this.btDefinirPosicao.UseVisualStyleBackColor = true;
             this.btDefinirPosicao.Click += new System.EventHandler(this.btDefinirPosicao_Click);
             // 

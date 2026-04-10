@@ -15,10 +15,12 @@ namespace FIFA_WorldCup.Forms
 {
     public partial class frmGrupoPosicaoDetalhe : Form
     {
+        Int16 gCopaID;
         public frmGrupoPosicaoDetalhe(Int16 GrupoID, Int16 CopaID)
         {
             InitializeComponent();
             CarregarPaises(GrupoID);
+            gCopaID = CopaID;
         }
 
 
@@ -86,13 +88,21 @@ namespace FIFA_WorldCup.Forms
         {
             if (ValidarSelecao())
             {
-
+                RNResultado rn = new RNResultado();
             }
         }
 
         private void btCancelar_Click(object sender, EventArgs e)
         {
+            IrParaGrupos();
+        }
+
+        private void IrParaGrupos()
+        {
+            frmMain pai = (frmMain)this.MdiParent;
+            pai.AbrirGruposLista(gCopaID);
 
         }
+
     }
 }

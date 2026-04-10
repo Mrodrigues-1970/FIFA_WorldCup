@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dal\DalBase.cs" />
+    <Compile Include="Dal\DalConfrontoConfederacao.cs" />
     <Compile Include="Dal\DalCopa.cs" />
     <Compile Include="Dal\DalDesempate.cs" />
     <Compile Include="Dal\DalDtoGrupoCopa.cs" />
