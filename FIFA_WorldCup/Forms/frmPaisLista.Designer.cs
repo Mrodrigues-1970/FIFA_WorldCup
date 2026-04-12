@@ -33,17 +33,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPaisLista));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPaisLista));
             this.lblTitulo = new System.Windows.Forms.Label();
             this.grdMain = new System.Windows.Forms.DataGridView();
-            this.cboConfederacao = new System.Windows.Forms.ComboBox();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btnIncluir = new System.Windows.Forms.ToolStripButton();
-            this.btnAlterar = new System.Windows.Forms.ToolStripButton();
-            this.btnLigacoes = new System.Windows.Forms.ToolStripButton();
-            this.btnEstatisticas = new System.Windows.Forms.ToolStripButton();
-            this.btnPerformance = new System.Windows.Forms.ToolStripButton();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomeRank = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +45,13 @@
             this.Confederacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Bandeira = new System.Windows.Forms.DataGridViewImageColumn();
             this.Rank = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cboConfederacao = new System.Windows.Forms.ComboBox();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnIncluir = new System.Windows.Forms.ToolStripButton();
+            this.btnAlterar = new System.Windows.Forms.ToolStripButton();
+            this.btnLigacoes = new System.Windows.Forms.ToolStripButton();
+            this.btnEstatisticas = new System.Windows.Forms.ToolStripButton();
+            this.btnPerformance = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.grdMain)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -119,14 +119,83 @@
             this.grdMain.TabIndex = 4;
             this.grdMain.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.grdMain_DataBindingComplete);
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 50;
+            // 
+            // NomeRank
+            // 
+            this.NomeRank.DataPropertyName = "NomeRank";
+            this.NomeRank.HeaderText = "Nome (Rank)";
+            this.NomeRank.Name = "NomeRank";
+            this.NomeRank.ReadOnly = true;
+            this.NomeRank.Width = 170;
+            // 
+            // Nome
+            // 
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            this.Nome.Visible = false;
+            this.Nome.Width = 200;
+            // 
+            // Nome_Ingles
+            // 
+            this.Nome_Ingles.DataPropertyName = "Nome_Ingles";
+            this.Nome_Ingles.HeaderText = "Inglês";
+            this.Nome_Ingles.Name = "Nome_Ingles";
+            this.Nome_Ingles.ReadOnly = true;
+            this.Nome_Ingles.Width = 170;
+            // 
+            // Ativo
+            // 
+            this.Ativo.DataPropertyName = "Ativo";
+            this.Ativo.HeaderText = "Ativo";
+            this.Ativo.Name = "Ativo";
+            this.Ativo.ReadOnly = true;
+            this.Ativo.Width = 50;
+            // 
+            // Confederacao
+            // 
+            this.Confederacao.DataPropertyName = "Confederacao";
+            this.Confederacao.HeaderText = "Confederação";
+            this.Confederacao.Name = "Confederacao";
+            this.Confederacao.ReadOnly = true;
+            this.Confederacao.Visible = false;
+            this.Confederacao.Width = 80;
+            // 
+            // Bandeira
+            // 
+            this.Bandeira.HeaderText = "";
+            this.Bandeira.Name = "Bandeira";
+            this.Bandeira.ReadOnly = true;
+            this.Bandeira.Width = 50;
+            // 
+            // Rank
+            // 
+            this.Rank.DataPropertyName = "Rank";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Rank.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Rank.HeaderText = "Rank";
+            this.Rank.Name = "Rank";
+            this.Rank.ReadOnly = true;
+            this.Rank.Visible = false;
+            this.Rank.Width = 50;
+            // 
             // cboConfederacao
             // 
             this.cboConfederacao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboConfederacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboConfederacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboConfederacao.FormattingEnabled = true;
             this.cboConfederacao.Location = new System.Drawing.Point(771, 150);
             this.cboConfederacao.Name = "cboConfederacao";
-            this.cboConfederacao.Size = new System.Drawing.Size(101, 21);
+            this.cboConfederacao.Size = new System.Drawing.Size(101, 24);
             this.cboConfederacao.TabIndex = 6;
             this.cboConfederacao.SelectedIndexChanged += new System.EventHandler(this.cboConfederacao_SelectedIndexChanged);
             // 
@@ -202,74 +271,6 @@
             this.btnPerformance.Text = "toolStripButton1";
             this.btnPerformance.ToolTipText = "Performance";
             this.btnPerformance.Click += new System.EventHandler(this.btnPerformance_Click);
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 50;
-            // 
-            // NomeRank
-            // 
-            this.NomeRank.DataPropertyName = "NomeRank";
-            this.NomeRank.HeaderText = "Nome (Rank)";
-            this.NomeRank.Name = "NomeRank";
-            this.NomeRank.ReadOnly = true;
-            this.NomeRank.Width = 170;
-            // 
-            // Nome
-            // 
-            this.Nome.DataPropertyName = "Nome";
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            this.Nome.Visible = false;
-            this.Nome.Width = 200;
-            // 
-            // Nome_Ingles
-            // 
-            this.Nome_Ingles.DataPropertyName = "Nome_Ingles";
-            this.Nome_Ingles.HeaderText = "Inglês";
-            this.Nome_Ingles.Name = "Nome_Ingles";
-            this.Nome_Ingles.ReadOnly = true;
-            this.Nome_Ingles.Width = 170;
-            // 
-            // Ativo
-            // 
-            this.Ativo.DataPropertyName = "Ativo";
-            this.Ativo.HeaderText = "Ativo";
-            this.Ativo.Name = "Ativo";
-            this.Ativo.ReadOnly = true;
-            this.Ativo.Width = 50;
-            // 
-            // Confederacao
-            // 
-            this.Confederacao.DataPropertyName = "Confederacao";
-            this.Confederacao.HeaderText = "Confederação";
-            this.Confederacao.Name = "Confederacao";
-            this.Confederacao.ReadOnly = true;
-            this.Confederacao.Visible = false;
-            this.Confederacao.Width = 80;
-            // 
-            // Bandeira
-            // 
-            this.Bandeira.HeaderText = "";
-            this.Bandeira.Name = "Bandeira";
-            this.Bandeira.ReadOnly = true;
-            this.Bandeira.Width = 50;
-            // 
-            // Rank
-            // 
-            this.Rank.DataPropertyName = "Rank";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Rank.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Rank.HeaderText = "Rank";
-            this.Rank.Name = "Rank";
-            this.Rank.ReadOnly = true;
-            this.Rank.Visible = false;
-            this.Rank.Width = 50;
             // 
             // frmPaisLista
             // 

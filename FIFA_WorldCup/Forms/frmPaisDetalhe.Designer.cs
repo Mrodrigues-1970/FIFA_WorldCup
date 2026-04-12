@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPaisDetalhe));
             this.lblTitulo = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtRank = new System.Windows.Forms.TextBox();
+            this.lblRank = new System.Windows.Forms.Label();
             this.imgConfederacao = new System.Windows.Forms.PictureBox();
             this.imgBandeira = new System.Windows.Forms.PictureBox();
             this.lblNomeIngles = new System.Windows.Forms.Label();
@@ -39,13 +42,15 @@
             this.txtNomePortugues = new System.Windows.Forms.TextBox();
             this.lblConfederacao = new System.Windows.Forms.Label();
             this.cboConfederacao = new System.Windows.Forms.ComboBox();
-            this.btSalvar = new System.Windows.Forms.Button();
-            this.btCancelar = new System.Windows.Forms.Button();
-            this.lblRank = new System.Windows.Forms.Label();
-            this.txtRank = new System.Windows.Forms.TextBox();
+            this.picSalvar = new System.Windows.Forms.PictureBox();
+            this.picCancelar = new System.Windows.Forms.PictureBox();
+            this.picLogo = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgConfederacao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgBandeira)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSalvar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCancelar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -60,6 +65,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.picLogo);
             this.groupBox1.Controls.Add(this.txtRank);
             this.groupBox1.Controls.Add(this.lblRank);
             this.groupBox1.Controls.Add(this.imgConfederacao);
@@ -73,15 +79,34 @@
             this.groupBox1.Controls.Add(this.cboConfederacao);
             this.groupBox1.Location = new System.Drawing.Point(38, 77);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(897, 521);
+            this.groupBox1.Size = new System.Drawing.Size(897, 495);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             // 
+            // txtRank
+            // 
+            this.txtRank.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRank.Location = new System.Drawing.Point(222, 293);
+            this.txtRank.Name = "txtRank";
+            this.txtRank.Size = new System.Drawing.Size(104, 24);
+            this.txtRank.TabIndex = 18;
+            // 
+            // lblRank
+            // 
+            this.lblRank.AutoSize = true;
+            this.lblRank.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRank.Location = new System.Drawing.Point(127, 299);
+            this.lblRank.Name = "lblRank";
+            this.lblRank.Size = new System.Drawing.Size(47, 18);
+            this.lblRank.TabIndex = 17;
+            this.lblRank.Text = "Rank:";
+            // 
             // imgConfederacao
             // 
-            this.imgConfederacao.Location = new System.Drawing.Point(638, 223);
+            this.imgConfederacao.BackColor = System.Drawing.Color.Transparent;
+            this.imgConfederacao.Location = new System.Drawing.Point(383, 302);
             this.imgConfederacao.Name = "imgConfederacao";
-            this.imgConfederacao.Size = new System.Drawing.Size(200, 200);
+            this.imgConfederacao.Size = new System.Drawing.Size(150, 150);
             this.imgConfederacao.TabIndex = 16;
             this.imgConfederacao.TabStop = false;
             // 
@@ -162,51 +187,45 @@
             this.cboConfederacao.Size = new System.Drawing.Size(199, 26);
             this.cboConfederacao.TabIndex = 1;
             // 
-            // btSalvar
+            // picSalvar
             // 
-            this.btSalvar.Location = new System.Drawing.Point(181, 615);
-            this.btSalvar.Name = "btSalvar";
-            this.btSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btSalvar.TabIndex = 8;
-            this.btSalvar.Text = "Salvar";
-            this.btSalvar.UseVisualStyleBackColor = true;
-            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
+            this.picSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.picSalvar.Image = ((System.Drawing.Image)(resources.GetObject("picSalvar.Image")));
+            this.picSalvar.Location = new System.Drawing.Point(291, 599);
+            this.picSalvar.Name = "picSalvar";
+            this.picSalvar.Size = new System.Drawing.Size(64, 64);
+            this.picSalvar.TabIndex = 10;
+            this.picSalvar.TabStop = false;
+            this.picSalvar.Click += new System.EventHandler(this.picSalvar_Click);
             // 
-            // btCancelar
+            // picCancelar
             // 
-            this.btCancelar.Location = new System.Drawing.Point(405, 615);
-            this.btCancelar.Name = "btCancelar";
-            this.btCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btCancelar.TabIndex = 9;
-            this.btCancelar.Text = "Cancelar";
-            this.btCancelar.UseVisualStyleBackColor = true;
-            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
+            this.picCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.picCancelar.Image = ((System.Drawing.Image)(resources.GetObject("picCancelar.Image")));
+            this.picCancelar.Location = new System.Drawing.Point(613, 599);
+            this.picCancelar.Name = "picCancelar";
+            this.picCancelar.Size = new System.Drawing.Size(64, 64);
+            this.picCancelar.TabIndex = 11;
+            this.picCancelar.TabStop = false;
+            this.picCancelar.Click += new System.EventHandler(this.picCancelar_Click);
             // 
-            // lblRank
+            // picLogo
             // 
-            this.lblRank.AutoSize = true;
-            this.lblRank.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRank.Location = new System.Drawing.Point(127, 299);
-            this.lblRank.Name = "lblRank";
-            this.lblRank.Size = new System.Drawing.Size(47, 18);
-            this.lblRank.TabIndex = 17;
-            this.lblRank.Text = "Rank:";
-            // 
-            // txtRank
-            // 
-            this.txtRank.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRank.Location = new System.Drawing.Point(222, 293);
-            this.txtRank.Name = "txtRank";
-            this.txtRank.Size = new System.Drawing.Size(104, 24);
-            this.txtRank.TabIndex = 18;
+            this.picLogo.ErrorImage = null;
+            this.picLogo.Location = new System.Drawing.Point(688, 252);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(150, 200);
+            this.picLogo.TabIndex = 19;
+            this.picLogo.TabStop = false;
             // 
             // frmPaisDetalhe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(994, 694);
-            this.Controls.Add(this.btCancelar);
-            this.Controls.Add(this.btSalvar);
+            this.Controls.Add(this.picCancelar);
+            this.Controls.Add(this.picSalvar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblTitulo);
             this.Name = "frmPaisDetalhe";
@@ -215,6 +234,9 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgConfederacao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgBandeira)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSalvar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCancelar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,13 +251,14 @@
         private System.Windows.Forms.TextBox txtNomePortugues;
         private System.Windows.Forms.Label lblConfederacao;
         private System.Windows.Forms.ComboBox cboConfederacao;
-        private System.Windows.Forms.Button btSalvar;
-        private System.Windows.Forms.Button btCancelar;
         private System.Windows.Forms.Label lblNomeIngles;
         private System.Windows.Forms.TextBox txtNomeIngles;
         private System.Windows.Forms.PictureBox imgBandeira;
         private System.Windows.Forms.PictureBox imgConfederacao;
         private System.Windows.Forms.TextBox txtRank;
         private System.Windows.Forms.Label lblRank;
+        private System.Windows.Forms.PictureBox picSalvar;
+        private System.Windows.Forms.PictureBox picCancelar;
+        private System.Windows.Forms.PictureBox picLogo;
     }
 }

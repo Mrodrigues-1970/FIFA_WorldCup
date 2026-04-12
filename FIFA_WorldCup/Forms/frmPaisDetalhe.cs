@@ -37,6 +37,7 @@ namespace FIFA_WorldCup.Forms
                 chkAtivo.Checked = oPais.Ativo.Value;
                 CarregarBandeira();
                 CarregarConfederacao(oPais.Confederacao);
+                CarregarEscudo();
             }
         }
 
@@ -62,33 +63,6 @@ namespace FIFA_WorldCup.Forms
 
         }
 
-        private void btSalvar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Pais oPais = new Pais();
-                oPais.Nome = txtNomePortugues.Text;
-                oPais.Nome_Ingles = txtNomeIngles.Text;
-                oPais.Confederacao = (Confederacao)cboConfederacao.SelectedValue;
-                oPais.ID = gPaisID;
-                oPais.Rank = Convert.ToInt16(txtRank.Text);
-                oPais.Ativo = chkAtivo.Checked;
-                RNPais rn = new RNPais();
-                rn.Salvar(oPais);
-            } catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Erro na aplicação", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            } finally
-            {
-                IrParaLista();
-            }
-        }
-
-        private void btCancelar_Click(object sender, EventArgs e)
-        {
-            IrParaLista();
-        }
-
         protected void IrParaLista()
         {
             frmMain frm = (frmMain)this.MdiParent;
@@ -108,11 +82,53 @@ namespace FIFA_WorldCup.Forms
 
         private void CarregarConfederacao(Confederacao vConfederacao)
         {
-            string path = GlobalVariables.pathFlags;
+            string path = GlobalVariables.pathConfederacoes;
             Image img = new Bitmap(path + (Int16)vConfederacao + ".png");
-            imgConfederacao.SizeMode = PictureBoxSizeMode.Normal;
+            imgConfederacao.SizeMode = PictureBoxSizeMode.StretchImage;
             imgConfederacao.Image = img;
         }
 
+        private void CarregarEscudo()
+        {
+            string path = GlobalVariables.pathLogos;
+            string pathEscudo = path + gPaisID + ".png"; ;
+            //se o arquivo do escudo não existir, carrega a imagem de escudo genérica
+            if (!System.IO.File.Exists(pathEscudo))
+            {
+                pathEscudo = path + "0.png";
+            }
+            Image escudo = new Bitmap(pathEscudo);
+            picLogo.SizeMode = PictureBoxSizeMode.StretchImage;
+            picLogo.Image = escudo;
+        }
+
+        private void picSalvar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Pais oPais = new Pais();
+                oPais.Nome = txtNomePortugues.Text;
+                oPais.Nome_Ingles = txtNomeIngles.Text;
+                oPais.Confederacao = (Confederacao)cboConfederacao.SelectedValue;
+                oPais.ID = gPaisID;
+                oPais.Rank = Convert.ToInt16(txtRank.Text);
+                oPais.Ativo = chkAtivo.Checked;
+                RNPais rn = new RNPais();
+                rn.Salvar(oPais);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro na aplicação", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                IrParaLista();
+            }
+        }
+
+        private void picCancelar_Click(object sender, EventArgs e)
+        {
+            IrParaLista();
+        }
     }
 }

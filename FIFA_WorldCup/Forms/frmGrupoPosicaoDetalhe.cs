@@ -16,18 +16,49 @@ namespace FIFA_WorldCup.Forms
     public partial class frmGrupoPosicaoDetalhe : Form
     {
         Int16 gCopaID;
+        Int16 gGrupoID;
+        Int16 gQuantidadePaises;
         public frmGrupoPosicaoDetalhe(Int16 GrupoID, Int16 CopaID)
         {
             InitializeComponent();
             CarregarPaises(GrupoID);
             gCopaID = CopaID;
+            gGrupoID = GrupoID;
+            AtualizarTitulo();
+            CarregarPosicoes();
         }
+
+        private void AtualizarTitulo()
+        {
+            RNCopa rnCopa = new RNCopa();
+            Copa copa = rnCopa.Sel(gCopaID);
+            RNGrupo rnG = new RNGrupo();
+            Grupo oGrupo = rnG.Sel(gGrupoID);
+            lblTitulo.Text = $"Definir posições do {oGrupo.Nome} - {copa.Nome}";
+        }
+
+
+        private void CarregarPosicoes()
+        {
+            RNPosicaoGrupo rnP = new RNPosicaoGrupo();
+            List<PosicaoGrupo> lista = rnP.Sel(gGrupoID);
+            if (lista.Count > 0)
+            {
+                cboPosicao1.SelectedValue = lista.Where(x => x.Posicao == 1).FirstOrDefault().PaisID;
+                cboPosicao2.SelectedValue = lista.Where(x => x.Posicao == 2).FirstOrDefault().PaisID;
+                cboPosicao3.SelectedValue = lista.Where(x => x.Posicao == 3).FirstOrDefault().PaisID;
+                if (gQuantidadePaises == 4)
+                    cboPosicao4.SelectedValue = lista.Where(x => x.Posicao == 4).FirstOrDefault().PaisID;
+            }
+        }
+
 
 
         private void CarregarPaises(Int16 GrupoID)
         {
             RNPais rnP = new RNPais();
             List<Pais> lista1 = rnP.MembrosDoGrupo(GrupoID);
+            gQuantidadePaises = (short)lista1.Count;
             List<Pais> lista2 = new List<Pais>();
             lista2.AddRange(lista1);
             List<Pais> lista3 = new List<Pais>();
@@ -47,24 +78,41 @@ namespace FIFA_WorldCup.Forms
             cboPosicao3.DisplayMember = "Nome";
             cboPosicao3.ValueMember = "ID";
 
-            cboPosicao4.DataSource = lista4;
-            cboPosicao4.DisplayMember = "Nome";
-            cboPosicao4.ValueMember = "ID";
+            if(gQuantidadePaises == 4)
+             {
+                cboPosicao4.DataSource = lista4;
+                cboPosicao4.DisplayMember = "Nome";
+                cboPosicao4.ValueMember = "ID";
+            }
+
         }
 
 
         private bool ValidarSelecao()
         {
             bool selecaoCorreta = true;
+            var selecionados = new[] {""};
 
-            // Pegando os valores selecionados
-            var selecionados = new[]
+            //// Pegando os valores selecionados
+            if (gQuantidadePaises == 4)
             {
-                ((Pais)cboPosicao1.SelectedItem).Nome,
-                ((Pais)cboPosicao2.SelectedItem).Nome,
-                ((Pais)cboPosicao3.SelectedItem).Nome,
-                ((Pais)cboPosicao4.SelectedItem).Nome
-            };
+                selecionados = new[]
+                {
+                    ((Pais)cboPosicao1.SelectedItem).Nome,
+                    ((Pais)cboPosicao2.SelectedItem).Nome,
+                    ((Pais)cboPosicao3.SelectedItem).Nome,
+                    ((Pais)cboPosicao4.SelectedItem).Nome
+                };
+            } else
+            {
+                selecionados = new[]
+                {
+                    ((Pais)cboPosicao1.SelectedItem).Nome,
+                    ((Pais)cboPosicao2.SelectedItem).Nome,
+                    ((Pais)cboPosicao3.SelectedItem).Nome
+                };
+            }
+
 
             // Verifica se algum está nulo (não selecionado)
             if (selecionados.Any(x => x == null))
@@ -78,24 +126,12 @@ namespace FIFA_WorldCup.Forms
 
             if (!todosDiferentes)
             {
-                MessageBox.Show("As 4 posições precisam ter países diferentes.", "Seleção errada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("As posições precisam ter países diferentes.", "Seleção errada", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 selecaoCorreta = false;
             }
-                return selecaoCorreta;
+            return selecaoCorreta;
         }
 
-        private void btSalvar_Click(object sender, EventArgs e)
-        {
-            if (ValidarSelecao())
-            {
-                RNResultado rn = new RNResultado();
-            }
-        }
-
-        private void btCancelar_Click(object sender, EventArgs e)
-        {
-            IrParaGrupos();
-        }
 
         private void IrParaGrupos()
         {
@@ -104,5 +140,60 @@ namespace FIFA_WorldCup.Forms
 
         }
 
+        private void frmGrupoPosicaoDetalhe_Shown(object sender, EventArgs e)
+        {
+            //centralizar titulo
+            lblTitulo.Left = (this.ClientSize.Width - lblTitulo.Width) / 2;
+        }
+
+        private void picSalvar_Click(object sender, EventArgs e)
+        {
+            if (ValidarSelecao())
+            {
+                List<PosicaoGrupo> lista = new List<PosicaoGrupo>();
+                RNPosicaoGrupo rN = new RNPosicaoGrupo();
+                PosicaoGrupo oPosicao1 = new PosicaoGrupo
+                {
+                    GrupoID = gGrupoID,
+                    PaisID = (short)cboPosicao1.SelectedValue,
+                    Posicao = 1
+                };
+                lista.Add(oPosicao1);
+
+                PosicaoGrupo oPosicao2 = new PosicaoGrupo
+                {
+                    GrupoID = gGrupoID,
+                    PaisID = (short)cboPosicao2.SelectedValue,
+                    Posicao = 2
+                };
+                lista.Add(oPosicao2);
+
+                PosicaoGrupo oPosicao3 = new PosicaoGrupo
+                {
+                    GrupoID = gGrupoID,
+                    PaisID = (short)cboPosicao3.SelectedValue,
+                    Posicao = 3
+                };
+                lista.Add(oPosicao3);
+
+                if (gQuantidadePaises == 4)
+                {
+                    PosicaoGrupo oPosicao4 = new PosicaoGrupo
+                    {
+                        GrupoID = gGrupoID,
+                        PaisID = (short)cboPosicao4.SelectedValue,
+                        Posicao = 4
+                    };
+                    lista.Add(oPosicao4);
+                }
+                rN.InserirPosicoes(lista);
+                IrParaGrupos();
+            }
+        }
+
+        private void picVoltar_Click(object sender, EventArgs e)
+        {
+            IrParaGrupos();
+        }
     }
 }

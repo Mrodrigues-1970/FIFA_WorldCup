@@ -82,7 +82,7 @@ namespace FIFA_WorldCup.Forms
         private void btDefinirPosicao_Click(object sender, EventArgs e)
         {
             Int16 TipoFase = (Int16)(grdMain.SelectedRows[0].Cells["TipoFaseID"].Value);
-            if (TipoFase == 1)
+            if (TipoFase == 1 || TipoFase == 7 || TipoFase == 8)
             {
                 Int16 GrupoID = Convert.ToInt16(grdMain.SelectedRows[0].Cells["ID"].Value);
                 frmMain frm = (frmMain)MdiParent;
@@ -96,24 +96,30 @@ namespace FIFA_WorldCup.Forms
 
         private void TrataVisibilidadeBotaoPosicoes()
         {
-            List<Int16> listaAnosCopaComRanking3lugar = new List<Int16>();
-            listaAnosCopaComRanking3lugar.Add(1986);
-            listaAnosCopaComRanking3lugar.Add(1990);
-            listaAnosCopaComRanking3lugar.Add(1994);
-            listaAnosCopaComRanking3lugar.Add(2026);
-            listaAnosCopaComRanking3lugar.Add(2030);
-            listaAnosCopaComRanking3lugar.Add(2034);
+            //List<Int16> listaAnosCopaComRanking3lugar = new List<Int16>();
+            //listaAnosCopaComRanking3lugar.Add(1986);
+            //listaAnosCopaComRanking3lugar.Add(1990);
+            //listaAnosCopaComRanking3lugar.Add(1994);
+            //listaAnosCopaComRanking3lugar.Add(2026);
+            //listaAnosCopaComRanking3lugar.Add(2030);
+            //listaAnosCopaComRanking3lugar.Add(2034);
             RNCopa rn = new RNCopa();
             Copa estaCopa = rn.Sel(gCopaID);
-            if (listaAnosCopaComRanking3lugar.Contains(estaCopa.Ano))
-            {
-                btDefinirPosicao.Visible = true;
-            }
-            else
+            //if (listaAnosCopaComRanking3lugar.Contains(estaCopa.Ano))
+            //{
+            //    btDefinirPosicao.Visible = true;
+            //}
+            //else
+            //{
+            //    btDefinirPosicao.Visible = false;
+            //}
+            if(estaCopa.Status == StatusCopa.Futura)
             {
                 btDefinirPosicao.Visible = false;
             }
-
         }
+
+
+
     }
 }

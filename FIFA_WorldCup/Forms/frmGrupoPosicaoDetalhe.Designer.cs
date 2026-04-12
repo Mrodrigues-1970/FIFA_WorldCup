@@ -28,24 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGrupoPosicaoDetalhe));
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.cboPosicao1 = new System.Windows.Forms.ComboBox();
             this.cboPosicao2 = new System.Windows.Forms.ComboBox();
             this.cboPosicao4 = new System.Windows.Forms.ComboBox();
             this.cboPosicao3 = new System.Windows.Forms.ComboBox();
-            this.btSalvar = new System.Windows.Forms.Button();
-            this.btCancelar = new System.Windows.Forms.Button();
+            this.picSalvar = new System.Windows.Forms.PictureBox();
+            this.picVoltar = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.picSalvar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picVoltar)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // lblTitulo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(291, 53);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(351, 31);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Definição de Posições para ";
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(291, 53);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(351, 31);
+            this.lblTitulo.TabIndex = 0;
+            this.lblTitulo.Text = "Definição de Posições para ";
             // 
             // cboPosicao1
             // 
@@ -87,40 +90,45 @@
             this.cboPosicao3.Size = new System.Drawing.Size(442, 28);
             this.cboPosicao3.TabIndex = 3;
             // 
-            // btSalvar
+            // picSalvar
             // 
-            this.btSalvar.Location = new System.Drawing.Point(274, 532);
-            this.btSalvar.Name = "btSalvar";
-            this.btSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btSalvar.TabIndex = 5;
-            this.btSalvar.Text = "Salvar";
-            this.btSalvar.UseVisualStyleBackColor = true;
-            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
+            this.picSalvar.BackColor = System.Drawing.Color.Transparent;
+            this.picSalvar.Image = ((System.Drawing.Image)(resources.GetObject("picSalvar.Image")));
+            this.picSalvar.Location = new System.Drawing.Point(274, 505);
+            this.picSalvar.Name = "picSalvar";
+            this.picSalvar.Size = new System.Drawing.Size(64, 64);
+            this.picSalvar.TabIndex = 7;
+            this.picSalvar.TabStop = false;
+            this.picSalvar.Click += new System.EventHandler(this.picSalvar_Click);
             // 
-            // btCancelar
+            // picVoltar
             // 
-            this.btCancelar.Location = new System.Drawing.Point(641, 532);
-            this.btCancelar.Name = "btCancelar";
-            this.btCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btCancelar.TabIndex = 6;
-            this.btCancelar.Text = "Cancelar";
-            this.btCancelar.UseVisualStyleBackColor = true;
-            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
+            this.picVoltar.BackColor = System.Drawing.Color.Transparent;
+            this.picVoltar.Image = ((System.Drawing.Image)(resources.GetObject("picVoltar.Image")));
+            this.picVoltar.Location = new System.Drawing.Point(652, 505);
+            this.picVoltar.Name = "picVoltar";
+            this.picVoltar.Size = new System.Drawing.Size(64, 64);
+            this.picVoltar.TabIndex = 8;
+            this.picVoltar.TabStop = false;
+            this.picVoltar.Click += new System.EventHandler(this.picVoltar_Click);
             // 
             // frmGrupoPosicaoDetalhe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1071, 657);
-            this.Controls.Add(this.btCancelar);
-            this.Controls.Add(this.btSalvar);
+            this.Controls.Add(this.picVoltar);
+            this.Controls.Add(this.picSalvar);
             this.Controls.Add(this.cboPosicao4);
             this.Controls.Add(this.cboPosicao3);
             this.Controls.Add(this.cboPosicao2);
             this.Controls.Add(this.cboPosicao1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTitulo);
             this.Name = "frmGrupoPosicaoDetalhe";
             this.Text = "frmGrupoPosicaoDetalhe";
+            this.Shown += new System.EventHandler(this.frmGrupoPosicaoDetalhe_Shown);
+            ((System.ComponentModel.ISupportInitialize)(this.picSalvar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picVoltar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,12 +136,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.ComboBox cboPosicao1;
         private System.Windows.Forms.ComboBox cboPosicao2;
         private System.Windows.Forms.ComboBox cboPosicao4;
         private System.Windows.Forms.ComboBox cboPosicao3;
-        private System.Windows.Forms.Button btSalvar;
-        private System.Windows.Forms.Button btCancelar;
+        private System.Windows.Forms.PictureBox picSalvar;
+        private System.Windows.Forms.PictureBox picVoltar;
     }
 }

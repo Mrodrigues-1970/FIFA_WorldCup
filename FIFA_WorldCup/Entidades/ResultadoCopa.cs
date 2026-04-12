@@ -21,7 +21,5 @@ namespace FIFA_WorldCup.Entidades
         public Int16 Posicao4_ID { get; set; }
         public string Posicao4_nome { get; set; }
 
-
-
     }
 }

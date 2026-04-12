@@ -78,6 +78,7 @@
     <Compile Include="Dal\DalParticipante.cs" />
     <Compile Include="Dal\DalPartida.cs" />
     <Compile Include="Dal\DalPartidaTreeview.cs" />
+    <Compile Include="Dal\DalPosicaoGrupo.cs" />
     <Compile Include="Dal\DalRankingGeral.cs" />
     <Compile Include="Dal\DalResultado.cs" />
     <Compile Include="Dal\DalSede.cs" />
@@ -100,6 +101,7 @@
     <Compile Include="Entidades\Pais.cs" />
     <Compile Include="Entidades\Partida.cs" />
     <Compile Include="Entidades\PartidaTreeView.cs" />
+    <Compile Include="Entidades\PosicaoGrupo.cs" />
     <Compile Include="Entidades\PosicaoResultado.cs" />
     <Compile Include="Entidades\RankingGeral.cs" />
     <Compile Include="Entidades\ResultadoCopa.cs" />
@@ -371,6 +373,7 @@
     <Compile Include="RN\RNParticipante.cs" />
     <Compile Include="RN\RNPartida.cs" />
     <Compile Include="RN\RNPartidaTreeView.cs" />
+    <Compile Include="RN\RNPosicaoGrupo.cs" />
     <Compile Include="RN\RNRanking.cs" />
     <Compile Include="RN\RNRankingGeral.cs" />
     <Compile Include="RN\RNResultado.cs" />

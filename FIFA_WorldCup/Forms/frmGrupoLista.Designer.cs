@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGrupoLista));
             this.lblTitulo = new System.Windows.Forms.Label();
             this.grdMain = new System.Windows.Forms.DataGridView();
@@ -58,8 +58,12 @@
             // 
             // grdMain
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.grdMain.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.grdMain.AllowUserToAddRows = false;
+            this.grdMain.AllowUserToDeleteRows = false;
+            this.grdMain.AllowUserToResizeColumns = false;
+            this.grdMain.AllowUserToResizeRows = false;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.grdMain.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.grdMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -170,9 +174,10 @@
             // 
             // btDefinirPosicao
             // 
-            this.btDefinirPosicao.Location = new System.Drawing.Point(396, 607);
+            this.btDefinirPosicao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDefinirPosicao.Location = new System.Drawing.Point(381, 607);
             this.btDefinirPosicao.Name = "btDefinirPosicao";
-            this.btDefinirPosicao.Size = new System.Drawing.Size(159, 23);
+            this.btDefinirPosicao.Size = new System.Drawing.Size(174, 31);
             this.btDefinirPosicao.TabIndex = 11;
             this.btDefinirPosicao.Text = "Posições no Grupo";
             this.btDefinirPosicao.UseVisualStyleBackColor = true;
