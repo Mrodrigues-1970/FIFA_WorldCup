@@ -23,5 +23,7 @@ namespace FIFA_WorldCup.Entidades
         // Propriedade INEXISTENTES na tabela RANKING_GERAL
         public Int16 Ano { get; set; }
 
+        public string NomePais { get; set; }
+
     }
 }

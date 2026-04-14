@@ -147,6 +147,32 @@ namespace FIFA_WorldCup.Dal
             return lista;
         }
 
+        public List<RankingGeral> Ranking3Lugar(Int16 Copa_ID)
+        {
+            List<RankingGeral> lista;
+            RankingGeral objeto;
+            try
+            {
+                lista = new List<RankingGeral>();
+                AbrirConexao();
+                oDR = LerBanco(SQLRanking3Lugar(Copa_ID));
+                while (oDR.Read())
+                {
+                    objeto = MontaObjeto(oDR);
+                    lista.Add(objeto);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                FecharConexao();
+            }
+            return lista;
+        }
+
         private string SQLDadosJogo(Int16 Copa_ID, Int16 Pais_ID)
         {
             oSB.Length = 0;
@@ -204,6 +230,7 @@ namespace FIFA_WorldCup.Dal
             oSB.Append("     SUM(RANKING_GERAL.GOLS_CONTRA) AS GOLS_CONTRA, ");
             oSB.Append("     SUM(RANKING_GERAL.SALDO) AS SALDO, ");
             oSB.Append("     SUM(RANKING_GERAL.PONTOS) AS PONTOS ");
+            oSB.Append("     '' AS NOME_PAIS");
             oSB.Append("    FROM COPA INNER JOIN RANKING_GERAL ON COPA.ID = RANKING_GERAL.COPA_ID ");
             oSB.Append("GROUP BY COPA.ANO, COPA.COMPETICAO, RANKING_GERAL.COPA_ID, RANKING_GERAL.PAIS_ID ");
             oSB.Append("HAVING COPA.COMPETICAO = " + (int)TipoCopa + " ");
@@ -215,7 +242,7 @@ namespace FIFA_WorldCup.Dal
         {
             oSB.Length = 0;
             oSB.Append("SELECT DISTINCT P.SELECAO_A, ");
-            oSB.Append("                PA.NOME, ");
+            oSB.Append("                PA.NOME AS NOME_PAIS, ");
             oSB.Append("                RG.JOGOS, ");
             oSB.Append("                RG.VITORIAS, ");
             oSB.Append("                RG.EMPATES, ");
@@ -229,6 +256,32 @@ namespace FIFA_WorldCup.Dal
             oSB.Append("WHERE RG.TIPO_FASE = " + TipoFase + " ");
             oSB.Append("  AND P.GRUPO_ID = " + GrupoID  + " ");
             oSB.Append("  AND RG.COPA_ID = " + CopaID);
+            return oSB.ToString();
+        }
+
+        private string SQLRanking3Lugar(Int16 Copa_ID)
+        {
+            string FaseGrupos = "1";
+            string TerceiroLugar = "3";
+            oSB.Length = 0;
+            oSB.Append("  SELECT GRUPO.NOME, ");
+            oSB.Append("         GRUPO.TIPO_FASE_ID, ");
+            oSB.Append("         PAIS.NOME AS NOME_PAIS, ");
+            oSB.Append("         SUM(RANKING_GERAL.PONTOS) AS PONTOS, ");
+            oSB.Append("         SUM(RANKING_GERAL.SALDO) AS SALDO, ");
+            oSB.Append("         SUM(RANKING_GERAL.JOGOS) AS JOGOS, ");
+            oSB.Append("         SUM(RANKING_GERAL.VITORIAS) AS VITORIAS, ");
+            oSB.Append("         SUM(RANKING_GERAL.EMPATES) AS EMPATES, ");
+            oSB.Append("         SUM(RANKING_GERAL.DERROTAS) AS DERROTAS, ");
+            oSB.Append("         SUM(RANKING_GERAL.GOLS_PRO) AS GOLS_PRO, ");
+            oSB.Append("         SUM(RANKING_GERAL.GOLS_CONTRA) AS GOLS_CONTRA,");
+            oSB.Append("         0 AS ANO ");
+            oSB.Append("    FROM (COPA INNER JOIN (PAIS INNER JOIN (GRUPO INNER JOIN POSICAO_GRUPO ON GRUPO.ID = POSICAO_GRUPO.Grupo_ID) ON PAIS.ID = POSICAO_GRUPO.PAIS_ID) ON COPA.ID = GRUPO.COPA_ID) INNER JOIN RANKING_GERAL ON (COPA.ID = RANKING_GERAL.COPA_ID) AND (PAIS.ID = RANKING_GERAL.PAIS_ID) ");
+            oSB.Append("   WHERE RANKING_GERAL.TIPO_FASE = " + FaseGrupos + " ");
+            oSB.Append("     AND COPA.ID = " + Copa_ID + " ");
+            oSB.Append("     AND POSICAO_GRUPO.POSICAO = " + TerceiroLugar + " ");
+            oSB.Append("GROUP BY GRUPO.NOME, GRUPO.TIPO_FASE_ID, PAIS.NOME, RANKING_GERAL.TIPO_FASE, COPA.ID, POSICAO_GRUPO.POSICAO ");
+            oSB.Append("ORDER BY SUM(RANKING_GERAL.PONTOS) DESC , SUM(RANKING_GERAL.SALDO) DESC");
             return oSB.ToString();
         }
 
@@ -290,6 +343,7 @@ namespace FIFA_WorldCup.Dal
             objeto.GolsContra = Convert.ToInt16(oDR["GOLS_CONTRA"]);
             objeto.Saldo = Convert.ToInt16(oDR["SALDO"]);
             objeto.Pontos = Convert.ToInt16(oDR["PONTOS"]);
+            objeto.NomePais = Convert.ToString(oDR["NOME_PAIS"]);
             //objeto.TipoFase = Convert.ToInt16(oDR["TIPO_FASE"]);
             return objeto;
         }

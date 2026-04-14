@@ -12,7 +12,7 @@ namespace FIFA_WorldCup.Forms
 {
     public partial class frmRanking3Lugar12 : Form
     {
-        public frmRanking3Lugar12()
+        public frmRanking3Lugar12(Int16 CopaID)
         {
             InitializeComponent();
         }

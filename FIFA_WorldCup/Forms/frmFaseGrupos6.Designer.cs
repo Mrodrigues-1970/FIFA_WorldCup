@@ -738,7 +738,6 @@
             // 
             this.pic3Lugares.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pic3Lugares.BackColor = System.Drawing.Color.Transparent;
-            this.pic3Lugares.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pic3Lugares.BackgroundImage")));
             this.pic3Lugares.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pic3Lugares.Image = ((System.Drawing.Image)(resources.GetObject("pic3Lugares.Image")));
             this.pic3Lugares.Location = new System.Drawing.Point(801, 649);
@@ -746,6 +745,7 @@
             this.pic3Lugares.Size = new System.Drawing.Size(64, 64);
             this.pic3Lugares.TabIndex = 58;
             this.pic3Lugares.TabStop = false;
+            this.pic3Lugares.Click += new System.EventHandler(this.pic3Lugares_Click);
             // 
             // frmFaseGrupos6
             // 

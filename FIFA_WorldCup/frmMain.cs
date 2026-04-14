@@ -291,6 +291,19 @@ namespace FIFA_WorldCup
             TratamentoNovoFormulario(frm);
         }
 
+        public void AbrirRanking3Lugar6(Int16 vCopaID)
+        {
+            frmRanking3Lugar6 frm = new frmRanking3Lugar6(vCopaID);
+            TratamentoNovoFormulario(frm);
+        }
+
+        public void AbrirRabkingGeral12(Int16 vCopaID)
+        {
+            frmRanking3Lugar12 frm = new frmRanking3Lugar12(vCopaID);
+            TratamentoNovoFormulario(frm);
+        }
+
+
         #endregion
 
         #region Geral

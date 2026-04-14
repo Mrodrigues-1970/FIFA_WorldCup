@@ -276,6 +276,10 @@ namespace FIFA_WorldCup.Forms
 
         }
 
-
+        private void pic3Lugares_Click(object sender, EventArgs e)
+        {
+            frmMain pai = (frmMain)this.MdiParent;
+            pai.AbrirRanking3Lugar6(gCopaID);
+        }
     }
 }

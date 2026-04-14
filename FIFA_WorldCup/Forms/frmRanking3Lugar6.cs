@@ -25,21 +25,18 @@ namespace FIFA_WorldCup.Forms
 
         private void CarregarDados()
         {
-            RNGrupo oRNGrupo = new RNGrupo();
-            RNRankingGeral oRNRankingGeral = new RNRankingGeral();
-
-            Int16 FaseGrupos = 1;
-            List<Grupo> listaGrupo = oRNGrupo.SelPorCopaETipoFase(gCopaID, FaseGrupos);
-            foreach (Grupo oGrupo in listaGrupo)
-            {
-
-
-                
-            }
-
-            
+            RNRankingGeral rn = new RNRankingGeral();
+            List<RankingGeral> lista = rn.Ranking3Lugar(gCopaID);
+            grdRanking.DataSource = lista;
         }
 
-
+        private void frmRanking3Lugar6_Shown(object sender, EventArgs e)
+        {
+            //Deixa as 4 primeiras linhas do grid com a cor de fundo diferente, para destacar os 4 primeiros colocados
+            for (int i = 0; i < 4; i++)
+            {
+                grdRanking.Rows[i].DefaultCellStyle.BackColor = Color.LightBlue;
+            }
+        }
     }
 }

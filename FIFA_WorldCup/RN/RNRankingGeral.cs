@@ -150,6 +150,11 @@ namespace FIFA_WorldCup.RN
             dal.DelTudoPorTipoCopa(oCompeticao);
         }
 
+        public List<RankingGeral> Ranking3Lugar(Int16 Copa_ID) { 
+            DalRankingGeral dal = new DalRankingGeral();
+            return dal.Ranking3Lugar(Copa_ID);
+        }
+
         /// <summary>
         /// Inclui a performance do pais relacionado ao pais escolhido
         /// </summary>
