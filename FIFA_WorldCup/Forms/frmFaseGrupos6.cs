@@ -251,6 +251,7 @@ namespace FIFA_WorldCup.Forms
                 lblGrupo4.Text = "Grupo 4";
                 lblGrupo5.Text = "Grupo 5";
                 lblGrupo6.Text = "Grupo 6";
+                pic3Lugares.Visible = false;
             }
 
         }

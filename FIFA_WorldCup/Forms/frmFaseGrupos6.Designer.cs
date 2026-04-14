@@ -739,6 +739,7 @@
             this.pic3Lugares.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.pic3Lugares.BackColor = System.Drawing.Color.Transparent;
             this.pic3Lugares.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pic3Lugares.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pic3Lugares.Image = ((System.Drawing.Image)(resources.GetObject("pic3Lugares.Image")));
             this.pic3Lugares.Location = new System.Drawing.Point(801, 649);
             this.pic3Lugares.Name = "pic3Lugares";

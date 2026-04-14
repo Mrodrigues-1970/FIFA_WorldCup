@@ -55,6 +55,7 @@ namespace FIFA_WorldCup.Dal
                 while (oDR.Read())
                 {
                     objeto = MontaObjeto(oDR);
+                    objeto.PaisID = Pais_ID;
                     lista.Add(objeto);
                 }
             }
@@ -229,8 +230,9 @@ namespace FIFA_WorldCup.Dal
             oSB.Append("     SUM(RANKING_GERAL.GOLS_PRO) AS GOLS_PRO, ");
             oSB.Append("     SUM(RANKING_GERAL.GOLS_CONTRA) AS GOLS_CONTRA, ");
             oSB.Append("     SUM(RANKING_GERAL.SALDO) AS SALDO, ");
-            oSB.Append("     SUM(RANKING_GERAL.PONTOS) AS PONTOS ");
-            oSB.Append("     '' AS NOME_PAIS");
+            oSB.Append("     SUM(RANKING_GERAL.PONTOS) AS PONTOS, ");
+            oSB.Append("     '' AS NOME_PAIS,");
+            oSB.Append("     0 AS PAIS_ID ");
             oSB.Append("    FROM COPA INNER JOIN RANKING_GERAL ON COPA.ID = RANKING_GERAL.COPA_ID ");
             oSB.Append("GROUP BY COPA.ANO, COPA.COMPETICAO, RANKING_GERAL.COPA_ID, RANKING_GERAL.PAIS_ID ");
             oSB.Append("HAVING COPA.COMPETICAO = " + (int)TipoCopa + " ");
@@ -267,6 +269,7 @@ namespace FIFA_WorldCup.Dal
             oSB.Append("  SELECT GRUPO.NOME, ");
             oSB.Append("         GRUPO.TIPO_FASE_ID, ");
             oSB.Append("         PAIS.NOME AS NOME_PAIS, ");
+            oSB.Append("         PAIS.ID AS PAIS_ID, ");
             oSB.Append("         SUM(RANKING_GERAL.PONTOS) AS PONTOS, ");
             oSB.Append("         SUM(RANKING_GERAL.SALDO) AS SALDO, ");
             oSB.Append("         SUM(RANKING_GERAL.JOGOS) AS JOGOS, ");
@@ -280,8 +283,8 @@ namespace FIFA_WorldCup.Dal
             oSB.Append("   WHERE RANKING_GERAL.TIPO_FASE = " + FaseGrupos + " ");
             oSB.Append("     AND COPA.ID = " + Copa_ID + " ");
             oSB.Append("     AND POSICAO_GRUPO.POSICAO = " + TerceiroLugar + " ");
-            oSB.Append("GROUP BY GRUPO.NOME, GRUPO.TIPO_FASE_ID, PAIS.NOME, RANKING_GERAL.TIPO_FASE, COPA.ID, POSICAO_GRUPO.POSICAO ");
-            oSB.Append("ORDER BY SUM(RANKING_GERAL.PONTOS) DESC , SUM(RANKING_GERAL.SALDO) DESC");
+            oSB.Append("GROUP BY GRUPO.NOME, GRUPO.TIPO_FASE_ID, PAIS.NOME, PAIS.ID, RANKING_GERAL.TIPO_FASE, COPA.ID, POSICAO_GRUPO.POSICAO ");
+            oSB.Append("ORDER BY SUM(RANKING_GERAL.PONTOS) DESC , SUM(RANKING_GERAL.SALDO) DESC, SUM(RANKING_GERAL.GOLS_PRO) DESC");
             return oSB.ToString();
         }
 
@@ -344,6 +347,7 @@ namespace FIFA_WorldCup.Dal
             objeto.Saldo = Convert.ToInt16(oDR["SALDO"]);
             objeto.Pontos = Convert.ToInt16(oDR["PONTOS"]);
             objeto.NomePais = Convert.ToString(oDR["NOME_PAIS"]);
+            objeto.PaisID = Convert.ToInt16(oDR["PAIS_ID"]);
             //objeto.TipoFase = Convert.ToInt16(oDR["TIPO_FASE"]);
             return objeto;
         }
