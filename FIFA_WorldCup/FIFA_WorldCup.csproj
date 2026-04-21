@@ -191,6 +191,12 @@
     <Compile Include="Forms\frmFinal.Designer.cs">
       <DependentUpon>frmFinal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmFormatoDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmFormatoDisplay.Designer.cs">
+      <DependentUpon>frmFormatoDisplay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmFormatosLista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,6 +292,12 @@
     </Compile>
     <Compile Include="Forms\frmPerformance.Designer.cs">
       <DependentUpon>frmPerformance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPopupFormato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPopupFormato.Designer.cs">
+      <DependentUpon>frmPopupFormato.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmPosterLista.cs">
       <SubType>Form</SubType>
@@ -430,6 +442,9 @@
     <EmbeddedResource Include="Forms\frmFinal.resx">
       <DependentUpon>frmFinal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmFormatoDisplay.resx">
+      <DependentUpon>frmFormatoDisplay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmFormatosLista.resx">
       <DependentUpon>frmFormatosLista.cs</DependentUpon>
     </EmbeddedResource>
@@ -477,6 +492,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmPerformance.resx">
       <DependentUpon>frmPerformance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPopupFormato.resx">
+      <DependentUpon>frmPopupFormato.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmPosterLista.resx">
       <DependentUpon>frmPosterLista.cs</DependentUpon>

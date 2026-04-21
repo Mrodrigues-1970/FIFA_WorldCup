@@ -331,6 +331,12 @@ namespace FIFA_WorldCup
             TratamentoNovoFormulario(frm);
         }
 
+        public void AbrirFormatoDetalhe(Int16 Copa_ID)
+        {
+            frmFormatoDisplay frm = new frmFormatoDisplay(Copa_ID);
+            TratamentoNovoFormulario(frm);
+        }
+
         #endregion
 
         #region Geral

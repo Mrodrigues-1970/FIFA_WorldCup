@@ -1,0 +1,39 @@
+1
+16 participantes
+Quatro grupos onde os vencedores disputam as semifinais. Os vencedores disputam a final.
+
+2
+16 participantes
+Não teve fase de grupos. A copa começou nas oitavas, os vencedores disputaram as quartas, os vencedores disputaram as semifinais e os vencedores destas participam da final.
+
+3
+16 participantes
+Quatro grupos onde os vencedores se classificam para o grupo final. O vencedor deste grupo é campeão. Este formato não possui a partida conhecida como final.
+
+4
+16 participantes
+Quatro grupos onde os vencedores se classificam para as quartas de final. Os vencedores se classificam para as semifinais e os vencedores destas participam da final.
+
+5
+16 participantes
+Quatro grupos onde os vencedores se classificam para os dois grupos da segunda fase. Os vencedores se classificam para as semifinais e os vencedores destas participam da final.
+
+6
+24 participantes
+Seis grupos onde os vencedores se classificam para os quatro grupos da segunda fase. Os vencedores se classificam para as semifinais e os vencedores destas participam da final.
+
+7
+24 participantes
+Seis grupos onde o 1º e 2º lugar de cada grupo se classificam para as oitavas. Os quatro melhores que ficaram em 3º lugar nos grupos também vão para as oitavas. Os vencedores se classificam para as quartas de final. Os vencedores se classificam para as semifinais e os vencedores destas participam da final.
+
+8
+32 participantes
+Oito grupos onde o 1º e 2º lugar de cada grupo se classificam para as oitavas. Os vencedores se classificam para as quartas de final. Os vencedores se classificam para as semifinais e os vencedores destas participam da final.
+
+9
+48 participantes
+Doze grupos onde o 1º e 2º lugar de cada grupo se classificam para as os 16 avos de final. Os oito melhores que ficaram em 3º lugar nos grupos também vão para esta fase. Os vencedores se classificam para as oitavas.  Os vencedores se classificam para as quartas de final. Os vencedores se classificam para as semifinais e os vencedores destas participam da final.
+
+
+
+

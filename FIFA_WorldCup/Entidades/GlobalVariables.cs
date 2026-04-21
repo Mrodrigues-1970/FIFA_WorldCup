@@ -13,5 +13,6 @@ namespace FIFA_WorldCup.Entidades
         public static string pathLogos = @"D:\Projetos\_Code\FIFAWC\FIFA_WorldCup\FIFA_WorldCup\img\Logos\";
         public static string pathConfederacoes = @"D:\Projetos\_Code\FIFAWC\FIFA_WorldCup\FIFA_WorldCup\img\Confederacoes\";
         public static string pathImagens = @"D:\Projetos\_Code\FIFAWC\FIFA_WorldCup\FIFA_WorldCup\img\";
+        public static string pathFormatos = @"D:\Projetos\_Code\FIFAWC\FIFA_WorldCup\FIFA_WorldCup\img\Formatos\";
     }
 }

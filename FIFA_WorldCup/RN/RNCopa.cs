@@ -300,7 +300,6 @@ namespace FIFA_WorldCup.RN
             return lista;
         }
 
-
         public List<PartidaTreeView> LoadTreeview(Int16 vCopaID)
         {
             List<PartidaTreeView> lista = new List<PartidaTreeView>();
@@ -513,7 +512,11 @@ namespace FIFA_WorldCup.RN
             return lista;
         }
 
-
+        public Int16 SelIDporAno(Int16 vAno, Competicao TipoCopa)
+        {
+            DalCopa oDal = new DalCopa();
+            return oDal.SelIDporAno(vAno, TipoCopa);
+        }
 
     }
 }

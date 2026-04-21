@@ -47,6 +47,34 @@ namespace FIFA_WorldCup.Dal
             return oPais;
         }
 
+        public Int16 SelIDporAno(Int16 vAno, Competicao TipoCopa)
+        {
+            Int16 CopaID = 0;
+            object objeto;
+            try
+            {
+                AbrirConexao();
+
+                objeto = ObterScalar(SQLSelIDporAno(vAno, TipoCopa));
+                CopaID = Convert.ToInt16(objeto);
+                //oDR = LerBanco(SQLSelIDporAno(vAno, TipoCopa));
+                //if (oDR.Read())
+                //{
+                //    ID = Convert.ToInt16(oDR["ID"]);
+                //}
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                FecharConexao();
+            }
+            return CopaID;
+        }
+
+
         private string SQLSel(Copa vCopa)
         {
             oSB.Length = 0;
@@ -62,6 +90,16 @@ namespace FIFA_WorldCup.Dal
                 oSB.AppendLine(" AND ID = " + vCopa.ID.ToString());
             }
             oSB.AppendLine("ORDER BY ANO");
+            return oSB.ToString();
+        }
+
+        private string SQLSelIDporAno(Int16 vAno, Competicao TipoCopa)
+        {
+            oSB.Length = 0;
+            oSB.AppendLine("SELECT ID ");
+            oSB.AppendLine("FROM COPA ");
+            oSB.AppendLine(" WHERE ANO = " + vAno.ToString());
+            oSB.AppendLine(" AND COMPETICAO = " + Convert.ToInt16(TipoCopa));
             return oSB.ToString();
         }
 
