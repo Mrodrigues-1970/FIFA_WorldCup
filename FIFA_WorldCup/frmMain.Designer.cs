@@ -44,6 +44,9 @@
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showcaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnTabelas = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnCopasFemininas = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnConfederacoes = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnFormatos = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -152,7 +155,10 @@
             // showcaseToolStripMenuItem
             // 
             this.showcaseToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnTabelas});
+            this.mnTabelas,
+            this.mnCopasFemininas,
+            this.mnConfederacoes,
+            this.mnFormatos});
             this.showcaseToolStripMenuItem.Name = "showcaseToolStripMenuItem";
             this.showcaseToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.showcaseToolStripMenuItem.Text = "Showcase";
@@ -160,9 +166,31 @@
             // mnTabelas
             // 
             this.mnTabelas.Name = "mnTabelas";
-            this.mnTabelas.Size = new System.Drawing.Size(113, 22);
-            this.mnTabelas.Text = "Tabelas";
+            this.mnTabelas.Size = new System.Drawing.Size(180, 22);
+            this.mnTabelas.Text = "Masculino";
             this.mnTabelas.Click += new System.EventHandler(this.mnTabelas_Click);
+            // 
+            // mnCopasFemininas
+            // 
+            this.mnCopasFemininas.Name = "mnCopasFemininas";
+            this.mnCopasFemininas.Size = new System.Drawing.Size(180, 22);
+            this.mnCopasFemininas.Text = "Feminino";
+            this.mnCopasFemininas.Click += new System.EventHandler(this.mnCopasFemininas_Click);
+            // 
+            // mnConfederacoes
+            // 
+            this.mnConfederacoes.Enabled = false;
+            this.mnConfederacoes.Name = "mnConfederacoes";
+            this.mnConfederacoes.Size = new System.Drawing.Size(180, 22);
+            this.mnConfederacoes.Text = "Confederações";
+            this.mnConfederacoes.Click += new System.EventHandler(this.mnConfederacoes_Click);
+            // 
+            // mnFormatos
+            // 
+            this.mnFormatos.Name = "mnFormatos";
+            this.mnFormatos.Size = new System.Drawing.Size(180, 22);
+            this.mnFormatos.Text = "Formatos";
+            this.mnFormatos.Click += new System.EventHandler(this.mnFormatos_Click);
             // 
             // frmMain
             // 
@@ -204,6 +232,9 @@
         private System.Windows.Forms.ToolStripMenuItem mnFIFARanking;
         private System.Windows.Forms.ToolStripMenuItem showcaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnTabelas;
+        private System.Windows.Forms.ToolStripMenuItem mnCopasFemininas;
+        private System.Windows.Forms.ToolStripMenuItem mnConfederacoes;
+        private System.Windows.Forms.ToolStripMenuItem mnFormatos;
     }
 }
 

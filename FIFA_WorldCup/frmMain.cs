@@ -66,6 +66,21 @@ namespace FIFA_WorldCup
             AbrirPosterLista();
         }
 
+        private void mnCopasFemininas_Click(object sender, EventArgs e)
+        {
+            AbrirShowcaseFeminino();
+        }
+
+        private void mnConfederacoes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnFormatos_Click(object sender, EventArgs e)
+        {
+            AbrirListaFormatos();
+        }
+
         #endregion
 
         #region Forms
@@ -267,6 +282,7 @@ namespace FIFA_WorldCup
             frmCalculoRankingGeral frm = new frmCalculoRankingGeral(oCompeticao);
             TratamentoNovoFormulario(frm);
         }
+
         public void AbrirPerformance(Int16 vPaisID)
         {
             frmPerformance frm = new frmPerformance(vPaisID);
@@ -303,6 +319,17 @@ namespace FIFA_WorldCup
             TratamentoNovoFormulario(frm);
         }
 
+        public void AbrirShowcaseFeminino()
+        {
+            frmPosterListaFeminino frm = new frmPosterListaFeminino();
+            TratamentoNovoFormulario(frm);
+        }
+
+        public void AbrirListaFormatos()
+        {
+            frmFormatosLista frm = new frmFormatosLista();
+            TratamentoNovoFormulario(frm);
+        }
 
         #endregion
 
@@ -335,6 +362,8 @@ namespace FIFA_WorldCup
                 iFrm.Close();
             }
         }
+
+
 
 
 

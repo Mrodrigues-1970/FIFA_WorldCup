@@ -40,26 +40,10 @@ namespace FIFA_WorldCup.Forms
 
         private void CarregarDadosGerais()
         {
-            RNEstatistica rn = new RNEstatistica();
-            List<Estatistica> ListaEstatisticas = rn.EstatisticasDoPais(gPaisID);
-            StringBuilder oSB = new StringBuilder();
-            oSB.Length = 0;
+            RNRankingGeral rn = new RNRankingGeral();
+            List<RankingGeral> listaGeral = rn.PerformanceDe1Pais(gPaisID, Competicao.Masculino);
+            grdGeral.DataSource = listaGeral;
 
-            foreach (Estatistica iEstatistica in ListaEstatisticas)
-            {
-                oSB.AppendLine(iEstatistica.Competicao.ToString());
-                oSB.AppendLine("Número de partidas: " + iEstatistica.NumeroPartidas);
-                oSB.AppendLine("Número de vitórias: " + iEstatistica.NumeroVitorias);
-                oSB.AppendLine("Número de empates: " + iEstatistica.NumeroEmpates);
-                oSB.AppendLine("Número de derrotas: " + iEstatistica.NumeroDerrotas);
-                oSB.AppendLine("Gols marcados: " + iEstatistica.GolsMarcados);
-                oSB.AppendLine("Gols sofridos: " + iEstatistica.GolsSofridos);
-                oSB.AppendLine("Saldo de Gols: " + iEstatistica.SaldoGols);
-                oSB.AppendLine("Pontuação Geral: " + iEstatistica.PontuacaoGeral);
-                //oSB.AppendLine(MontaTextoParticipacao(oStat.Copas));
-                oSB.AppendLine("_____________________________________________________");
-                txtEstatisticasGerais.Text = oSB.ToString();
-            }
         }
         
         private void btFechar_Click(object sender, EventArgs e)

@@ -191,6 +191,12 @@
     <Compile Include="Forms\frmFinal.Designer.cs">
       <DependentUpon>frmFinal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmFormatosLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmFormatosLista.Designer.cs">
+      <DependentUpon>frmFormatosLista.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmGrupoDetalhe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,6 +292,12 @@
     </Compile>
     <Compile Include="Forms\frmPosterLista.Designer.cs">
       <DependentUpon>frmPosterLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPosterListaFeminino.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPosterListaFeminino.Designer.cs">
+      <DependentUpon>frmPosterListaFeminino.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmRanking3Lugar12.cs">
       <SubType>Form</SubType>
@@ -418,6 +430,9 @@
     <EmbeddedResource Include="Forms\frmFinal.resx">
       <DependentUpon>frmFinal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmFormatosLista.resx">
+      <DependentUpon>frmFormatosLista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmGrupoDetalhe.resx">
       <DependentUpon>frmGrupoDetalhe.cs</DependentUpon>
     </EmbeddedResource>
@@ -465,6 +480,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmPosterLista.resx">
       <DependentUpon>frmPosterLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPosterListaFeminino.resx">
+      <DependentUpon>frmPosterListaFeminino.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmRanking3Lugar12.resx">
       <DependentUpon>frmRanking3Lugar12.cs</DependentUpon>
@@ -523,6 +541,7 @@
     <None Include="FIFA_WCDataSet.xss">
       <DependentUpon>FIFA_WCDataSet.xsd</DependentUpon>
     </None>
+    <None Include="img\Formatos\FormatosCopa.xlsx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -680,6 +699,16 @@
     <Content Include="img\Flags\98.png" />
     <Content Include="img\Flags\99.png" />
     <Content Include="img\Flags\zzzzzzzzzwhat.png" />
+    <Content Include="img\Formatos\Formato1.png" />
+    <Content Include="img\Formatos\Formato2.png" />
+    <Content Include="img\Formatos\Formato3.png" />
+    <Content Include="img\Formatos\Formato4.png" />
+    <Content Include="img\Formatos\Formato5.png" />
+    <Content Include="img\Formatos\Formato6.png" />
+    <Content Include="img\Formatos\Formato7.png" />
+    <Content Include="img\Formatos\Formato8.png" />
+    <Content Include="img\Formatos\Formato9.png" />
+    <Content Include="img\Formatos\FormatosDisplay.png" />
     <Content Include="img\FundoTreeview32.png" />
     <Content Include="img\grupo12.jpg" />
     <Content Include="img\grupo2.jpg" />
@@ -858,6 +887,28 @@
     <Content Include="img\Posters\9.jpg" />
     <Content Include="img\Ranking3oLugar12.png" />
     <Content Include="img\Ranking3osLugares.png" />
+    <Content Include="img\Representacao\Copa 1930.png" />
+    <Content Include="img\Representacao\Copa 1934.png" />
+    <Content Include="img\Representacao\Copa 1938.png" />
+    <Content Include="img\Representacao\Copa 1950.png" />
+    <Content Include="img\Representacao\Copa 1954.png" />
+    <Content Include="img\Representacao\Copa 1958.png" />
+    <Content Include="img\Representacao\Copa 1962.png" />
+    <Content Include="img\Representacao\COPA 1966.png" />
+    <Content Include="img\Representacao\Copa 1970.png" />
+    <Content Include="img\Representacao\Copa 1974.png" />
+    <Content Include="img\Representacao\Copa 1978.png" />
+    <Content Include="img\Representacao\Copa 1982.png" />
+    <Content Include="img\Representacao\Copa 1986.png" />
+    <Content Include="img\Representacao\Copa 1990.png" />
+    <Content Include="img\Representacao\Copa 1994.png" />
+    <Content Include="img\Representacao\Copa 1998.png" />
+    <Content Include="img\Representacao\Copa 2002.png" />
+    <Content Include="img\Representacao\Copa 2006.png" />
+    <Content Include="img\Representacao\Copa 2010.png" />
+    <Content Include="img\Representacao\Copa 2014.png" />
+    <Content Include="img\Representacao\Copa 2018.png" />
+    <Content Include="img\Representacao\Copa 2022.png" />
     <Content Include="img\SemiFinal.png" />
     <Content Include="img\setaD.png" />
     <Content Include="img\setaDir.png" />

@@ -34,6 +34,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPerformance));
             this.grdMain = new System.Windows.Forms.DataGridView();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.btOK = new System.Windows.Forms.Button();
             this.CopaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PaisID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ano = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,8 +48,7 @@
             this.Saldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pontos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoFase = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblTitulo = new System.Windows.Forms.Label();
-            this.btOK = new System.Windows.Forms.Button();
+            this.NomePais = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdMain)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,7 +80,8 @@
             this.GolsContra,
             this.Saldo,
             this.Pontos,
-            this.TipoFase});
+            this.TipoFase,
+            this.NomePais});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -103,6 +105,27 @@
             this.grdMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdMain.Size = new System.Drawing.Size(784, 488);
             this.grdMain.TabIndex = 0;
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(333, 23);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(234, 25);
+            this.lblTitulo.TabIndex = 1;
+            this.lblTitulo.Text = "Performance nas Copas: ";
+            // 
+            // btOK
+            // 
+            this.btOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btOK.Location = new System.Drawing.Point(475, 582);
+            this.btOK.Name = "btOK";
+            this.btOK.Size = new System.Drawing.Size(75, 23);
+            this.btOK.TabIndex = 2;
+            this.btOK.Text = "OK";
+            this.btOK.UseVisualStyleBackColor = true;
+            this.btOK.Click += new System.EventHandler(this.btOK_Click);
             // 
             // CopaID
             // 
@@ -201,26 +224,13 @@
             this.TipoFase.Visible = false;
             this.TipoFase.Width = 80;
             // 
-            // lblTitulo
+            // NomePais
             // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(333, 23);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(234, 25);
-            this.lblTitulo.TabIndex = 1;
-            this.lblTitulo.Text = "Performance nas Copas: ";
-            // 
-            // btOK
-            // 
-            this.btOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btOK.Location = new System.Drawing.Point(475, 582);
-            this.btOK.Name = "btOK";
-            this.btOK.Size = new System.Drawing.Size(75, 23);
-            this.btOK.TabIndex = 2;
-            this.btOK.Text = "OK";
-            this.btOK.UseVisualStyleBackColor = true;
-            this.btOK.Click += new System.EventHandler(this.btOK_Click);
+            this.NomePais.DataPropertyName = "NomePais";
+            this.NomePais.HeaderText = "NomePais";
+            this.NomePais.Name = "NomePais";
+            this.NomePais.ReadOnly = true;
+            this.NomePais.Visible = false;
             // 
             // frmPerformance
             // 
@@ -244,6 +254,8 @@
         #endregion
 
         private System.Windows.Forms.DataGridView grdMain;
+        private System.Windows.Forms.Label lblTitulo;
+        private System.Windows.Forms.Button btOK;
         private System.Windows.Forms.DataGridViewTextBoxColumn CopaID;
         private System.Windows.Forms.DataGridViewTextBoxColumn PaisID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ano;
@@ -256,7 +268,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Saldo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Pontos;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoFase;
-        private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Button btOK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomePais;
     }
 }

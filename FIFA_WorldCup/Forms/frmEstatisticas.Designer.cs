@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEstatisticas));
             this.lblTitulo = new System.Windows.Forms.Label();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabGeral = new System.Windows.Forms.TabPage();
-            this.txtEstatisticasGerais = new System.Windows.Forms.TextBox();
+            this.grdGeral = new System.Windows.Forms.DataGridView();
             this.tabConquistas = new System.Windows.Forms.TabPage();
             this.lblConquista14 = new System.Windows.Forms.Label();
             this.lblConquista13 = new System.Windows.Forms.Label();
@@ -88,13 +88,6 @@
             this.colCompeticao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabConfederacoes = new System.Windows.Forms.TabPage();
             this.grdConfederacoes = new System.Windows.Forms.DataGridView();
-            this.tabRanking = new System.Windows.Forms.TabPage();
-            this.lblResultado = new System.Windows.Forms.Label();
-            this.btRecalcularConfederacoes = new System.Windows.Forms.Button();
-            this.btRecalcularFeminino = new System.Windows.Forms.Button();
-            this.btRecalcularmasculino = new System.Windows.Forms.Button();
-            this.btFechar = new System.Windows.Forms.Button();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Partidas = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -104,8 +97,29 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabRanking = new System.Windows.Forms.TabPage();
+            this.lblResultado = new System.Windows.Forms.Label();
+            this.btRecalcularConfederacoes = new System.Windows.Forms.Button();
+            this.btRecalcularFeminino = new System.Windows.Forms.Button();
+            this.btRecalcularmasculino = new System.Windows.Forms.Button();
+            this.btFechar = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.CopaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PaisID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Jogos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VitoriasEstatisticas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmpatesEstatisticas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DerrotasEstatisticas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GolsProEstatisticas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GolsContraEstatisticas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SaldoEstatisticas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PontosEstatisticas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoFaseEstatisticas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AnoEstatisticas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomePaisEstatisticas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl.SuspendLayout();
             this.tabGeral.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdGeral)).BeginInit();
             this.tabConquistas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cup14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cup13)).BeginInit();
@@ -156,7 +170,7 @@
             // 
             // tabGeral
             // 
-            this.tabGeral.Controls.Add(this.txtEstatisticasGerais);
+            this.tabGeral.Controls.Add(this.grdGeral);
             this.tabGeral.Location = new System.Drawing.Point(4, 22);
             this.tabGeral.Name = "tabGeral";
             this.tabGeral.Padding = new System.Windows.Forms.Padding(3);
@@ -165,15 +179,36 @@
             this.tabGeral.Text = "Geral";
             this.tabGeral.UseVisualStyleBackColor = true;
             // 
-            // txtEstatisticasGerais
+            // grdGeral
             // 
-            this.txtEstatisticasGerais.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstatisticasGerais.Location = new System.Drawing.Point(17, 25);
-            this.txtEstatisticasGerais.Multiline = true;
-            this.txtEstatisticasGerais.Name = "txtEstatisticasGerais";
-            this.txtEstatisticasGerais.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtEstatisticasGerais.Size = new System.Drawing.Size(867, 462);
-            this.txtEstatisticasGerais.TabIndex = 0;
+            this.grdGeral.AllowUserToAddRows = false;
+            this.grdGeral.AllowUserToDeleteRows = false;
+            this.grdGeral.AllowUserToResizeColumns = false;
+            this.grdGeral.AllowUserToResizeRows = false;
+            this.grdGeral.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grdGeral.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdGeral.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CopaID,
+            this.PaisID,
+            this.Jogos,
+            this.VitoriasEstatisticas,
+            this.EmpatesEstatisticas,
+            this.DerrotasEstatisticas,
+            this.GolsProEstatisticas,
+            this.GolsContraEstatisticas,
+            this.SaldoEstatisticas,
+            this.PontosEstatisticas,
+            this.TipoFaseEstatisticas,
+            this.AnoEstatisticas,
+            this.NomePaisEstatisticas});
+            this.grdGeral.Location = new System.Drawing.Point(6, 6);
+            this.grdGeral.Name = "grdGeral";
+            this.grdGeral.ReadOnly = true;
+            this.grdGeral.RowHeadersVisible = false;
+            this.grdGeral.Size = new System.Drawing.Size(902, 499);
+            this.grdGeral.TabIndex = 0;
             // 
             // tabConquistas
             // 
@@ -494,8 +529,8 @@
             this.grdConfrontos.AllowUserToAddRows = false;
             this.grdConfrontos.AllowUserToDeleteRows = false;
             this.grdConfrontos.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.grdConfrontos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.grdConfrontos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
             this.grdConfrontos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -540,8 +575,8 @@
             // ConfederacaoAdversario
             // 
             this.ConfederacaoAdversario.DataPropertyName = "ConfederacaoAdversario";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ConfederacaoAdversario.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ConfederacaoAdversario.DefaultCellStyle = dataGridViewCellStyle22;
             this.ConfederacaoAdversario.HeaderText = "Confederação";
             this.ConfederacaoAdversario.Name = "ConfederacaoAdversario";
             this.ConfederacaoAdversario.ReadOnly = true;
@@ -550,8 +585,8 @@
             // Vitorias
             // 
             this.Vitorias.DataPropertyName = "Vitorias";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Vitorias.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Vitorias.DefaultCellStyle = dataGridViewCellStyle23;
             this.Vitorias.HeaderText = "Vitorias";
             this.Vitorias.Name = "Vitorias";
             this.Vitorias.ReadOnly = true;
@@ -560,8 +595,8 @@
             // Empates
             // 
             this.Empates.DataPropertyName = "Empates";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Empates.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Empates.DefaultCellStyle = dataGridViewCellStyle24;
             this.Empates.HeaderText = "Empates";
             this.Empates.Name = "Empates";
             this.Empates.ReadOnly = true;
@@ -570,8 +605,8 @@
             // Derrotas
             // 
             this.Derrotas.DataPropertyName = "Derrotas";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Derrotas.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Derrotas.DefaultCellStyle = dataGridViewCellStyle25;
             this.Derrotas.HeaderText = "Derrotas";
             this.Derrotas.Name = "Derrotas";
             this.Derrotas.ReadOnly = true;
@@ -580,8 +615,8 @@
             // GolsMarcados
             // 
             this.GolsMarcados.DataPropertyName = "GolsMarcados";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.GolsMarcados.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.GolsMarcados.DefaultCellStyle = dataGridViewCellStyle26;
             this.GolsMarcados.HeaderText = "GP";
             this.GolsMarcados.Name = "GolsMarcados";
             this.GolsMarcados.ReadOnly = true;
@@ -591,8 +626,8 @@
             // GolsSofridos
             // 
             this.GolsSofridos.DataPropertyName = "GolsSofridos";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.GolsSofridos.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.GolsSofridos.DefaultCellStyle = dataGridViewCellStyle27;
             this.GolsSofridos.HeaderText = "GC";
             this.GolsSofridos.Name = "GolsSofridos";
             this.GolsSofridos.ReadOnly = true;
@@ -602,8 +637,8 @@
             // SaldoGols
             // 
             this.SaldoGols.DataPropertyName = "SaldoGols";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SaldoGols.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SaldoGols.DefaultCellStyle = dataGridViewCellStyle28;
             this.SaldoGols.HeaderText = "Saldo";
             this.SaldoGols.Name = "SaldoGols";
             this.SaldoGols.ReadOnly = true;
@@ -613,8 +648,8 @@
             // NumPartidas
             // 
             this.NumPartidas.DataPropertyName = "Partidas";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.NumPartidas.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.NumPartidas.DefaultCellStyle = dataGridViewCellStyle29;
             this.NumPartidas.HeaderText = "Partidas";
             this.NumPartidas.Name = "NumPartidas";
             this.NumPartidas.ReadOnly = true;
@@ -641,8 +676,8 @@
             // 
             this.grdConfederacoes.AllowUserToAddRows = false;
             this.grdConfederacoes.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.grdConfederacoes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.grdConfederacoes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle30;
             this.grdConfederacoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdConfederacoes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -662,78 +697,6 @@
             this.grdConfederacoes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdConfederacoes.Size = new System.Drawing.Size(868, 410);
             this.grdConfederacoes.TabIndex = 1;
-            // 
-            // tabRanking
-            // 
-            this.tabRanking.Controls.Add(this.lblResultado);
-            this.tabRanking.Controls.Add(this.btRecalcularConfederacoes);
-            this.tabRanking.Controls.Add(this.btRecalcularFeminino);
-            this.tabRanking.Controls.Add(this.btRecalcularmasculino);
-            this.tabRanking.Location = new System.Drawing.Point(4, 22);
-            this.tabRanking.Name = "tabRanking";
-            this.tabRanking.Size = new System.Drawing.Size(914, 511);
-            this.tabRanking.TabIndex = 5;
-            this.tabRanking.Text = "Ranking";
-            this.tabRanking.UseVisualStyleBackColor = true;
-            // 
-            // lblResultado
-            // 
-            this.lblResultado.AutoSize = true;
-            this.lblResultado.Location = new System.Drawing.Point(371, 404);
-            this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(16, 13);
-            this.lblResultado.TabIndex = 7;
-            this.lblResultado.Text = "...";
-            // 
-            // btRecalcularConfederacoes
-            // 
-            this.btRecalcularConfederacoes.Location = new System.Drawing.Point(371, 321);
-            this.btRecalcularConfederacoes.Name = "btRecalcularConfederacoes";
-            this.btRecalcularConfederacoes.Size = new System.Drawing.Size(172, 23);
-            this.btRecalcularConfederacoes.TabIndex = 6;
-            this.btRecalcularConfederacoes.Text = "Recalcular Confederações";
-            this.btRecalcularConfederacoes.UseVisualStyleBackColor = true;
-            this.btRecalcularConfederacoes.Click += new System.EventHandler(this.btRecalcularConfederacoes_Click);
-            // 
-            // btRecalcularFeminino
-            // 
-            this.btRecalcularFeminino.Location = new System.Drawing.Point(371, 241);
-            this.btRecalcularFeminino.Name = "btRecalcularFeminino";
-            this.btRecalcularFeminino.Size = new System.Drawing.Size(172, 23);
-            this.btRecalcularFeminino.TabIndex = 5;
-            this.btRecalcularFeminino.Text = "Recalcular Feminino";
-            this.btRecalcularFeminino.UseVisualStyleBackColor = true;
-            this.btRecalcularFeminino.Click += new System.EventHandler(this.btRecalcularFeminino_Click);
-            // 
-            // btRecalcularmasculino
-            // 
-            this.btRecalcularmasculino.Location = new System.Drawing.Point(371, 166);
-            this.btRecalcularmasculino.Name = "btRecalcularmasculino";
-            this.btRecalcularmasculino.Size = new System.Drawing.Size(172, 23);
-            this.btRecalcularmasculino.TabIndex = 4;
-            this.btRecalcularmasculino.Text = "Recalcular Masculino";
-            this.btRecalcularmasculino.UseVisualStyleBackColor = true;
-            this.btRecalcularmasculino.Click += new System.EventHandler(this.btRecalcularmasculino_Click);
-            // 
-            // btFechar
-            // 
-            this.btFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btFechar.Location = new System.Drawing.Point(444, 629);
-            this.btFechar.Name = "btFechar";
-            this.btFechar.Size = new System.Drawing.Size(75, 23);
-            this.btFechar.TabIndex = 9;
-            this.btFechar.Text = "Fechar";
-            this.btFechar.UseVisualStyleBackColor = true;
-            this.btFechar.Click += new System.EventHandler(this.btFechar_Click);
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "JulesRimet180.png");
-            this.imageList1.Images.SetKeyName(1, "FIFA-WC-Trophy180.png");
-            this.imageList1.Images.SetKeyName(2, "FIFA-WWC-Trophy180.png");
-            this.imageList1.Images.SetKeyName(3, "ConfederationsCup180.png");
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -810,6 +773,158 @@
             this.dataGridViewTextBoxColumn8.ToolTipText = "Saldo de Gols";
             this.dataGridViewTextBoxColumn8.Width = 80;
             // 
+            // tabRanking
+            // 
+            this.tabRanking.Controls.Add(this.lblResultado);
+            this.tabRanking.Controls.Add(this.btRecalcularConfederacoes);
+            this.tabRanking.Controls.Add(this.btRecalcularFeminino);
+            this.tabRanking.Controls.Add(this.btRecalcularmasculino);
+            this.tabRanking.Location = new System.Drawing.Point(4, 22);
+            this.tabRanking.Name = "tabRanking";
+            this.tabRanking.Size = new System.Drawing.Size(914, 511);
+            this.tabRanking.TabIndex = 5;
+            this.tabRanking.Text = "Ranking";
+            this.tabRanking.UseVisualStyleBackColor = true;
+            // 
+            // lblResultado
+            // 
+            this.lblResultado.AutoSize = true;
+            this.lblResultado.Location = new System.Drawing.Point(371, 404);
+            this.lblResultado.Name = "lblResultado";
+            this.lblResultado.Size = new System.Drawing.Size(16, 13);
+            this.lblResultado.TabIndex = 7;
+            this.lblResultado.Text = "...";
+            // 
+            // btRecalcularConfederacoes
+            // 
+            this.btRecalcularConfederacoes.Location = new System.Drawing.Point(371, 321);
+            this.btRecalcularConfederacoes.Name = "btRecalcularConfederacoes";
+            this.btRecalcularConfederacoes.Size = new System.Drawing.Size(172, 23);
+            this.btRecalcularConfederacoes.TabIndex = 6;
+            this.btRecalcularConfederacoes.Text = "Recalcular Confederações";
+            this.btRecalcularConfederacoes.UseVisualStyleBackColor = true;
+            this.btRecalcularConfederacoes.Click += new System.EventHandler(this.btRecalcularConfederacoes_Click);
+            // 
+            // btRecalcularFeminino
+            // 
+            this.btRecalcularFeminino.Location = new System.Drawing.Point(371, 241);
+            this.btRecalcularFeminino.Name = "btRecalcularFeminino";
+            this.btRecalcularFeminino.Size = new System.Drawing.Size(172, 23);
+            this.btRecalcularFeminino.TabIndex = 5;
+            this.btRecalcularFeminino.Text = "Recalcular Feminino";
+            this.btRecalcularFeminino.UseVisualStyleBackColor = true;
+            this.btRecalcularFeminino.Click += new System.EventHandler(this.btRecalcularFeminino_Click);
+            // 
+            // btRecalcularmasculino
+            // 
+            this.btRecalcularmasculino.Location = new System.Drawing.Point(371, 166);
+            this.btRecalcularmasculino.Name = "btRecalcularmasculino";
+            this.btRecalcularmasculino.Size = new System.Drawing.Size(172, 23);
+            this.btRecalcularmasculino.TabIndex = 4;
+            this.btRecalcularmasculino.Text = "Recalcular Masculino";
+            this.btRecalcularmasculino.UseVisualStyleBackColor = true;
+            this.btRecalcularmasculino.Click += new System.EventHandler(this.btRecalcularmasculino_Click);
+            // 
+            // btFechar
+            // 
+            this.btFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btFechar.Location = new System.Drawing.Point(444, 629);
+            this.btFechar.Name = "btFechar";
+            this.btFechar.Size = new System.Drawing.Size(75, 23);
+            this.btFechar.TabIndex = 9;
+            this.btFechar.Text = "Fechar";
+            this.btFechar.UseVisualStyleBackColor = true;
+            this.btFechar.Click += new System.EventHandler(this.btFechar_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "JulesRimet180.png");
+            this.imageList1.Images.SetKeyName(1, "FIFA-WC-Trophy180.png");
+            this.imageList1.Images.SetKeyName(2, "FIFA-WWC-Trophy180.png");
+            this.imageList1.Images.SetKeyName(3, "ConfederationsCup180.png");
+            // 
+            // CopaID
+            // 
+            this.CopaID.DataPropertyName = "CopaID";
+            this.CopaID.HeaderText = "CopaID";
+            this.CopaID.Name = "CopaID";
+            this.CopaID.Visible = false;
+            // 
+            // PaisID
+            // 
+            this.PaisID.DataPropertyName = "PaisID";
+            this.PaisID.HeaderText = "PaisID";
+            this.PaisID.Name = "PaisID";
+            this.PaisID.Visible = false;
+            // 
+            // Jogos
+            // 
+            this.Jogos.DataPropertyName = "Jogos";
+            this.Jogos.HeaderText = "Jogos";
+            this.Jogos.Name = "Jogos";
+            // 
+            // VitoriasEstatisticas
+            // 
+            this.VitoriasEstatisticas.DataPropertyName = "Vitorias";
+            this.VitoriasEstatisticas.HeaderText = "Vitórias";
+            this.VitoriasEstatisticas.Name = "VitoriasEstatisticas";
+            // 
+            // EmpatesEstatisticas
+            // 
+            this.EmpatesEstatisticas.DataPropertyName = "Empates";
+            this.EmpatesEstatisticas.HeaderText = "Empates";
+            this.EmpatesEstatisticas.Name = "EmpatesEstatisticas";
+            // 
+            // DerrotasEstatisticas
+            // 
+            this.DerrotasEstatisticas.DataPropertyName = "Derrotas";
+            this.DerrotasEstatisticas.HeaderText = "Derrotas";
+            this.DerrotasEstatisticas.Name = "DerrotasEstatisticas";
+            // 
+            // GolsProEstatisticas
+            // 
+            this.GolsProEstatisticas.DataPropertyName = "GolsPro";
+            this.GolsProEstatisticas.HeaderText = "Gols Pró";
+            this.GolsProEstatisticas.Name = "GolsProEstatisticas";
+            // 
+            // GolsContraEstatisticas
+            // 
+            this.GolsContraEstatisticas.DataPropertyName = "GolsContra";
+            this.GolsContraEstatisticas.HeaderText = "Gols Contra";
+            this.GolsContraEstatisticas.Name = "GolsContraEstatisticas";
+            // 
+            // SaldoEstatisticas
+            // 
+            this.SaldoEstatisticas.DataPropertyName = "Saldo";
+            this.SaldoEstatisticas.HeaderText = "Saldo";
+            this.SaldoEstatisticas.Name = "SaldoEstatisticas";
+            // 
+            // PontosEstatisticas
+            // 
+            this.PontosEstatisticas.DataPropertyName = "Pontos";
+            this.PontosEstatisticas.HeaderText = "Pontos";
+            this.PontosEstatisticas.Name = "PontosEstatisticas";
+            // 
+            // TipoFaseEstatisticas
+            // 
+            this.TipoFaseEstatisticas.DataPropertyName = "TipoFase";
+            this.TipoFaseEstatisticas.HeaderText = "Tipo Fase";
+            this.TipoFaseEstatisticas.Name = "TipoFaseEstatisticas";
+            // 
+            // AnoEstatisticas
+            // 
+            this.AnoEstatisticas.DataPropertyName = "Ano";
+            this.AnoEstatisticas.HeaderText = "Ano";
+            this.AnoEstatisticas.Name = "AnoEstatisticas";
+            // 
+            // NomePaisEstatisticas
+            // 
+            this.NomePaisEstatisticas.DataPropertyName = "NomePais";
+            this.NomePaisEstatisticas.HeaderText = "NomePais";
+            this.NomePaisEstatisticas.Name = "NomePaisEstatisticas";
+            // 
             // frmEstatisticas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -822,7 +937,7 @@
             this.Text = "frmEstatisticas";
             this.tabControl.ResumeLayout(false);
             this.tabGeral.ResumeLayout(false);
-            this.tabGeral.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdGeral)).EndInit();
             this.tabConquistas.ResumeLayout(false);
             this.tabConquistas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cup14)).EndInit();
@@ -890,7 +1005,6 @@
         private System.Windows.Forms.Label lblConquista10;
         private System.Windows.Forms.Label lblConquista9;
         private System.Windows.Forms.Label lblConquista8;
-        private System.Windows.Forms.TextBox txtEstatisticasGerais;
         private System.Windows.Forms.DataGridViewTextBoxColumn AdversarioID;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeAdversario;
         private System.Windows.Forms.DataGridViewTextBoxColumn ConfederacaoAdversario;
@@ -916,5 +1030,19 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridView grdGeral;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CopaID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PaisID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Jogos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn VitoriasEstatisticas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EmpatesEstatisticas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DerrotasEstatisticas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GolsProEstatisticas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GolsContraEstatisticas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SaldoEstatisticas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PontosEstatisticas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoFaseEstatisticas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AnoEstatisticas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomePaisEstatisticas;
     }
 }
