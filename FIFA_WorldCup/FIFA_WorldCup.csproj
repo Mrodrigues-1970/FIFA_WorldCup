@@ -131,6 +131,12 @@
     <Compile Include="Forms\frmCalculoRankingGeral.Designer.cs">
       <DependentUpon>frmCalculoRankingGeral.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmCopaDetalhe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCopaDetalhe.Designer.cs">
+      <DependentUpon>frmCopaDetalhe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmCopaLista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -411,6 +417,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmCalculoRankingGeral.resx">
       <DependentUpon>frmCalculoRankingGeral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCopaDetalhe.resx">
+      <DependentUpon>frmCopaDetalhe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmCopaLista.resx">
       <DependentUpon>frmCopaLista.cs</DependentUpon>

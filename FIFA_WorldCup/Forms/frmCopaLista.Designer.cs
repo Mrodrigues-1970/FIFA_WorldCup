@@ -53,8 +53,12 @@
             this.masculinoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.femininoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.confederaçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.picIncluir = new System.Windows.Forms.PictureBox();
+            this.picEditar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdMain)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picIncluir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEditar)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -91,7 +95,7 @@
             this.grdMain.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.grdMain.RowHeadersVisible = false;
             this.grdMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdMain.Size = new System.Drawing.Size(876, 544);
+            this.grdMain.Size = new System.Drawing.Size(876, 504);
             this.grdMain.TabIndex = 2;
             // 
             // ID
@@ -294,6 +298,32 @@
             this.confederaçõesToolStripMenuItem.Text = "Confederações";
             this.confederaçõesToolStripMenuItem.Click += new System.EventHandler(this.confederaçõesToolStripMenuItem_Click);
             // 
+            // picIncluir
+            // 
+            this.picIncluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.picIncluir.BackColor = System.Drawing.Color.Transparent;
+            this.picIncluir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picIncluir.Image = ((System.Drawing.Image)(resources.GetObject("picIncluir.Image")));
+            this.picIncluir.Location = new System.Drawing.Point(389, 640);
+            this.picIncluir.Name = "picIncluir";
+            this.picIncluir.Size = new System.Drawing.Size(32, 32);
+            this.picIncluir.TabIndex = 12;
+            this.picIncluir.TabStop = false;
+            this.picIncluir.Click += new System.EventHandler(this.picIncluir_Click);
+            // 
+            // picEditar
+            // 
+            this.picEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.picEditar.BackColor = System.Drawing.Color.Transparent;
+            this.picEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picEditar.Image = ((System.Drawing.Image)(resources.GetObject("picEditar.Image")));
+            this.picEditar.Location = new System.Drawing.Point(587, 640);
+            this.picEditar.Name = "picEditar";
+            this.picEditar.Size = new System.Drawing.Size(32, 32);
+            this.picEditar.TabIndex = 13;
+            this.picEditar.TabStop = false;
+            this.picEditar.Click += new System.EventHandler(this.picEditar_Click);
+            // 
             // frmCopaLista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -301,6 +331,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1027, 700);
+            this.Controls.Add(this.picEditar);
+            this.Controls.Add(this.picIncluir);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.cboCompeticao);
             this.Controls.Add(this.lblTitulo);
@@ -310,6 +342,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdMain)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picIncluir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEditar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -340,5 +374,7 @@
         private System.Windows.Forms.ToolStripMenuItem masculinoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem femininoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem confederaçõesToolStripMenuItem;
+        private System.Windows.Forms.PictureBox picIncluir;
+        private System.Windows.Forms.PictureBox picEditar;
     }
 }

@@ -132,7 +132,6 @@ namespace FIFA_WorldCup.RN
             return resposta;
         }
 
-
         public List<PartidaTreeView> FAKEload()
         {
             List<PartidaTreeView> lista = new List<PartidaTreeView>();
@@ -329,7 +328,7 @@ namespace FIFA_WorldCup.RN
             }
 
 
-            
+
             //#region 16avos (0 - 15)
 
             //if (listaDoBanco.Count > 0 && listaDoBanco.ElementAt(0).DataPartida > DateTime.Today)
@@ -517,6 +516,32 @@ namespace FIFA_WorldCup.RN
             DalCopa oDal = new DalCopa();
             return oDal.SelIDporAno(vAno, TipoCopa);
         }
+
+
+        public void Salvar(Copa vCopa)
+        {
+            if (vCopa.ID == 0)
+            {
+                Ins(vCopa);
+            }
+            else
+            {
+                Upd(vCopa);
+            }
+        }
+
+        private void Ins(Copa vCopa)
+        {
+            DalCopa oDal = new DalCopa();
+            oDal.Ins(vCopa);
+        }
+
+        private void Upd(Copa vCopa)
+        {
+            DalCopa oDal = new DalCopa();
+            oDal.Upd(vCopa);
+        }
+
 
     }
 }

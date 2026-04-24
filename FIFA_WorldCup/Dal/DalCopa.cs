@@ -36,6 +36,40 @@ namespace FIFA_WorldCup.Dal
             return lista;
         }
 
+        public void Ins(Copa vCopa)
+        {
+            try
+            {
+                AbrirConexao();
+                ExecutarSQL(SQLIns(vCopa));
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                FecharConexao();
+            }
+        }
+
+        public void Upd(Copa vCopa)
+        {
+            try
+            {
+                AbrirConexao();
+                ExecutarSQL(SQLUpd(vCopa));
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                FecharConexao();
+            }
+        }
+
         public Copa Sel(Int16 vCopaID)
         {
             Copa filtro = new Copa();
@@ -90,6 +124,31 @@ namespace FIFA_WorldCup.Dal
                 oSB.AppendLine(" AND ID = " + vCopa.ID.ToString());
             }
             oSB.AppendLine("ORDER BY ANO");
+            return oSB.ToString();
+        }
+
+        //Cria o código SQL para inserir um novo registro na tabela COPA
+        private string SQLIns(Copa vCopa)
+        {
+            oSB.Length = 0;
+            oSB.AppendLine("INSERT INTO COPA (NOME, ANO, MASCOTE, STATUS, COMPETICAO, DATA_INICIAL, DATA_FINAL) ");
+            oSB.AppendLine("VALUES ('" + vCopa.Nome + "', " + vCopa.Ano + ", '" + vCopa.Mascote + "', " + Convert.ToInt16(vCopa.Status) + ", " + Convert.ToInt16(vCopa.Competicao) + ", '" + vCopa.Data_Inicial.ToString("yyyy-MM-dd") + "', '" + vCopa.Data_Final.ToString("yyyy-MM-dd") + "')");
+            return oSB.ToString();
+        }
+
+        //Cria o código SQL para atualizar um registro existente na tabela COPA
+        private string SQLUpd(Copa vCopa)
+        {
+            oSB.Length = 0;
+            oSB.AppendLine("UPDATE COPA SET ");
+            oSB.AppendLine("NOME = '" + vCopa.Nome + "', ");
+            oSB.AppendLine("ANO = " + vCopa.Ano + ", ");
+            oSB.AppendLine("MASCOTE = '" + vCopa.Mascote + "', ");
+            oSB.AppendLine("STATUS = " + Convert.ToInt16(vCopa.Status) + ", ");
+            oSB.AppendLine("COMPETICAO = " + Convert.ToInt16(vCopa.Competicao) + ", ");
+            oSB.AppendLine("DATA_INICIAL = '" + vCopa.Data_Inicial.ToString("yyyy-MM-dd") + "', ");
+            oSB.AppendLine("DATA_FINAL = '" + vCopa.Data_Final.ToString("yyyy-MM-dd") + "' ");
+            oSB.AppendLine("WHERE ID = " + vCopa.ID);
             return oSB.ToString();
         }
 

@@ -52,9 +52,20 @@ namespace FIFA_WorldCup.Forms
         private void cboCompeticao_SelectedIndexChanged(object sender, EventArgs e)
         {
             CarregarGrid();
+            if((Competicao)cboCompeticao.SelectedItem == Competicao.Confederacoes)
+            {
+                picEditar.Visible = false;
+                picIncluir.Visible = false;
+            }
+            else
+            {
+                picEditar.Visible = true;
+                picIncluir.Visible = true;
+            }
         }
 
-        private NocauteDisponivel TipoNocaute(Int16 CopaID) {
+        private NocauteDisponivel TipoNocaute(Int16 CopaID)
+        {
 
             RNCopa rn = new RNCopa();
             NocauteDisponivel nocautes = rn.NocauteCopa(CopaID);
@@ -138,6 +149,23 @@ namespace FIFA_WorldCup.Forms
         {
             frmMain pai = (frmMain)this.MdiParent;
             pai.AbrirCalculoRankingGeral(oCompeticao);
+        }
+
+        private void picIncluir_Click(object sender, EventArgs e)
+        {
+            IrParaDetalhes(0);
+        }
+
+        private void picEditar_Click(object sender, EventArgs e)
+        {
+            Int16 CopaID = Convert.ToInt16(grdMain.SelectedRows[0].Cells["ID"].Value);
+            IrParaDetalhes(CopaID);
+        }
+
+        private void IrParaDetalhes(Int16 CopaID)
+        {
+            frmMain frm = (frmMain)this.MdiParent;
+            frm.AbrirCopaDetalhe(CopaID);
         }
 
 
