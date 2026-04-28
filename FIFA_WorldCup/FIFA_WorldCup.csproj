@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dal\DalBase.cs" />
+    <Compile Include="Dal\DalCidade.cs" />
     <Compile Include="Dal\DalConfrontoConfederacao.cs" />
     <Compile Include="Dal\DalCopa.cs" />
     <Compile Include="Dal\DalDesempate.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Dal\DalSede.cs" />
     <Compile Include="Dal\DalTipoFase.cs" />
     <Compile Include="Dal\DalVagas.cs" />
+    <Compile Include="Entidades\Cidade.cs" />
     <Compile Include="Entidades\Competicao.cs" />
     <Compile Include="Entidades\Confederacao.cs" />
     <Compile Include="Entidades\ConfrontoConfederacao.cs" />
@@ -130,6 +132,18 @@
     </Compile>
     <Compile Include="Forms\frmCalculoRankingGeral.Designer.cs">
       <DependentUpon>frmCalculoRankingGeral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCidadeDetalhe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCidadeDetalhe.Designer.cs">
+      <DependentUpon>frmCidadeDetalhe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCidadeLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCidadeLista.Designer.cs">
+      <DependentUpon>frmCidadeLista.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmCopaDetalhe.cs">
       <SubType>Form</SubType>
@@ -391,6 +405,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RN\RNCidade.cs" />
     <Compile Include="RN\RNCopa.cs" />
     <Compile Include="RN\RNDesempate.cs" />
     <Compile Include="RN\RNDtoGrupoCopa.cs" />
@@ -417,6 +432,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmCalculoRankingGeral.resx">
       <DependentUpon>frmCalculoRankingGeral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCidadeDetalhe.resx">
+      <DependentUpon>frmCidadeDetalhe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCidadeLista.resx">
+      <DependentUpon>frmCidadeLista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmCopaDetalhe.resx">
       <DependentUpon>frmCopaDetalhe.cs</DependentUpon>

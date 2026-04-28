@@ -190,6 +190,7 @@
             // pictureBox16
             // 
             this.pictureBox16.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox16.ErrorImage = null;
             this.pictureBox16.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox16.Image")));
             this.pictureBox16.Location = new System.Drawing.Point(747, 228);
             this.pictureBox16.Name = "pictureBox16";

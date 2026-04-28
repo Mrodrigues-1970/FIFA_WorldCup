@@ -136,7 +136,14 @@ namespace FIFA_WorldCup.Forms
             }
         }
 
-
-
+        private void btnCidades_Click(object sender, EventArgs e)
+        {
+            if (grdMain.SelectedRows.Count > 0)
+            {
+                Int16 PaisID = Convert.ToInt16(grdMain.SelectedRows[0].Cells["ID"].Value);
+                frmMain frm = (frmMain)this.MdiParent;
+                frm.AbrirListaCidades(PaisID);
+            }
+        }
     }
 }

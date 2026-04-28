@@ -52,6 +52,7 @@
             this.btnLigacoes = new System.Windows.Forms.ToolStripButton();
             this.btnEstatisticas = new System.Windows.Forms.ToolStripButton();
             this.btnPerformance = new System.Windows.Forms.ToolStripButton();
+            this.btnCidades = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.grdMain)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -206,7 +207,8 @@
             this.btnAlterar,
             this.btnLigacoes,
             this.btnEstatisticas,
-            this.btnPerformance});
+            this.btnPerformance,
+            this.btnCidades});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(976, 41);
@@ -272,6 +274,20 @@
             this.btnPerformance.ToolTipText = "Performance";
             this.btnPerformance.Click += new System.EventHandler(this.btnPerformance_Click);
             // 
+            // btnCidades
+            // 
+            this.btnCidades.BackColor = System.Drawing.Color.Transparent;
+            this.btnCidades.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCidades.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnCidades.Image = ((System.Drawing.Image)(resources.GetObject("btnCidades.Image")));
+            this.btnCidades.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnCidades.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCidades.Name = "btnCidades";
+            this.btnCidades.Size = new System.Drawing.Size(36, 38);
+            this.btnCidades.Text = "toolStripButton1";
+            this.btnCidades.ToolTipText = "Cidades";
+            this.btnCidades.Click += new System.EventHandler(this.btnCidades_Click);
+            // 
             // frmPaisLista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -312,5 +328,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Confederacao;
         private System.Windows.Forms.DataGridViewImageColumn Bandeira;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rank;
+        private System.Windows.Forms.ToolStripButton btnCidades;
     }
 }

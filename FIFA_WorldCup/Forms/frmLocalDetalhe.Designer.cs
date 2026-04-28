@@ -78,58 +78,63 @@
             // lblAno
             // 
             this.lblAno.AutoSize = true;
+            this.lblAno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAno.Location = new System.Drawing.Point(165, 106);
             this.lblAno.Name = "lblAno";
-            this.lblAno.Size = new System.Drawing.Size(26, 13);
+            this.lblAno.Size = new System.Drawing.Size(28, 15);
             this.lblAno.TabIndex = 14;
             this.lblAno.Text = "Ano";
             // 
             // txtAno
             // 
-            this.txtAno.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAno.Location = new System.Drawing.Point(235, 99);
             this.txtAno.Name = "txtAno";
             this.txtAno.ReadOnly = true;
-            this.txtAno.Size = new System.Drawing.Size(112, 24);
+            this.txtAno.Size = new System.Drawing.Size(112, 26);
             this.txtAno.TabIndex = 13;
             // 
             // lblCidade
             // 
             this.lblCidade.AutoSize = true;
+            this.lblCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCidade.Location = new System.Drawing.Point(165, 259);
             this.lblCidade.Name = "lblCidade";
-            this.lblCidade.Size = new System.Drawing.Size(40, 13);
+            this.lblCidade.Size = new System.Drawing.Size(46, 15);
             this.lblCidade.TabIndex = 12;
             this.lblCidade.Text = "Cidade";
             // 
             // txtCidade
             // 
+            this.txtCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCidade.Location = new System.Drawing.Point(235, 252);
             this.txtCidade.Name = "txtCidade";
-            this.txtCidade.Size = new System.Drawing.Size(320, 20);
+            this.txtCidade.Size = new System.Drawing.Size(320, 26);
             this.txtCidade.TabIndex = 11;
             // 
             // lblEstadio
             // 
             this.lblEstadio.AutoSize = true;
+            this.lblEstadio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstadio.Location = new System.Drawing.Point(165, 182);
             this.lblEstadio.Name = "lblEstadio";
-            this.lblEstadio.Size = new System.Drawing.Size(42, 13);
+            this.lblEstadio.Size = new System.Drawing.Size(48, 15);
             this.lblEstadio.TabIndex = 10;
             this.lblEstadio.Text = "Estádio";
             // 
             // txtEstadio
             // 
+            this.txtEstadio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEstadio.Location = new System.Drawing.Point(235, 175);
             this.txtEstadio.Name = "txtEstadio";
-            this.txtEstadio.Size = new System.Drawing.Size(320, 20);
+            this.txtEstadio.Size = new System.Drawing.Size(320, 26);
             this.txtEstadio.TabIndex = 9;
             // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(252, 25);
+            this.lblTitulo.Location = new System.Drawing.Point(388, 24);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(151, 25);
             this.lblTitulo.TabIndex = 10;

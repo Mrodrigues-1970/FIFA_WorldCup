@@ -343,6 +343,18 @@ namespace FIFA_WorldCup
             TratamentoNovoFormulario(frm);
         }
 
+        public void AbrirListaCidades(Int16 PaisID)
+        {
+            frmCidadeLista frm = new frmCidadeLista(PaisID);
+            TratamentoNovoFormulario(frm);
+        }
+
+        public void AbrirCidadeDetalhe(Int16 CidadeID, Int16 PaisID)
+        {
+            frmCidadeDetalhe frm = new frmCidadeDetalhe(CidadeID, PaisID);
+            TratamentoNovoFormulario(frm);
+        }
+
         #endregion
 
         #region Geral

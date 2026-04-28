@@ -1207,7 +1207,7 @@
             this.Controls.Add(this.imgFinalista1);
             this.Controls.Add(this.lblNomeCopa);
             this.Name = "frmTreeView";
-            this.Text = ".";
+            this.Text = "Mata Mata";
             ((System.ComponentModel.ISupportInitialize)(this.imgFinalista1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgFinalista2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgSF3)).EndInit();
