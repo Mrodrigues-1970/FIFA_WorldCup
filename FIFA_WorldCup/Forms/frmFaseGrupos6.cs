@@ -26,7 +26,6 @@ namespace FIFA_WorldCup.Forms
             CarregarDadosCopa();
         }
 
-
         private void CarregarSelecoes()
         {
             int posicao = 0;
@@ -186,7 +185,6 @@ namespace FIFA_WorldCup.Forms
                 }
             }
         }
-
 
         private Image RetornaImagem(Int16 PaisID)
         {

@@ -313,7 +313,7 @@ namespace FIFA_WorldCup
             TratamentoNovoFormulario(frm);
         }
 
-        public void AbrirRabkingGeral12(Int16 vCopaID)
+        public void AbrirRanking3Lugar12(Int16 vCopaID)
         {
             frmRanking3Lugar12 frm = new frmRanking3Lugar12(vCopaID);
             TratamentoNovoFormulario(frm);

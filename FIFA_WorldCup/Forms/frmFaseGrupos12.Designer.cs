@@ -140,6 +140,7 @@
             this.lblNomeCopa = new System.Windows.Forms.Label();
             this.posterCopa = new System.Windows.Forms.PictureBox();
             this.btProxFase = new System.Windows.Forms.PictureBox();
+            this.pic3Lugares = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -190,6 +191,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox48)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.posterCopa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btProxFase)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic3Lugares)).BeginInit();
             this.SuspendLayout();
             // 
             // lblA
@@ -1295,6 +1297,20 @@
             this.btProxFase.TabStop = false;
             this.btProxFase.Click += new System.EventHandler(this.btProxFase_Click);
             // 
+            // pic3Lugares
+            // 
+            this.pic3Lugares.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pic3Lugares.BackColor = System.Drawing.Color.Transparent;
+            this.pic3Lugares.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pic3Lugares.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pic3Lugares.Image = ((System.Drawing.Image)(resources.GetObject("pic3Lugares.Image")));
+            this.pic3Lugares.Location = new System.Drawing.Point(833, 647);
+            this.pic3Lugares.Name = "pic3Lugares";
+            this.pic3Lugares.Size = new System.Drawing.Size(64, 64);
+            this.pic3Lugares.TabIndex = 112;
+            this.pic3Lugares.TabStop = false;
+            this.pic3Lugares.Click += new System.EventHandler(this.pic3Lugares_Click);
+            // 
             // frmFaseGrupos12
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1302,6 +1318,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1004, 716);
+            this.Controls.Add(this.pic3Lugares);
             this.Controls.Add(this.btProxFase);
             this.Controls.Add(this.lblNomeCopa);
             this.Controls.Add(this.posterCopa);
@@ -1465,6 +1482,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox48)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.posterCopa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btProxFase)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic3Lugares)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1583,5 +1601,6 @@
         private System.Windows.Forms.Label lblNomeCopa;
         private System.Windows.Forms.PictureBox posterCopa;
         private System.Windows.Forms.PictureBox btProxFase;
+        private System.Windows.Forms.PictureBox pic3Lugares;
     }
 }
