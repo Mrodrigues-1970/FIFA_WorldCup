@@ -53,9 +53,9 @@
             this.picInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.picInfo.BackColor = System.Drawing.Color.Transparent;
+            this.picInfo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picInfo.BackgroundImage")));
             this.picInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.picInfo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picInfo.Image = ((System.Drawing.Image)(resources.GetObject("picInfo.Image")));
             this.picInfo.Location = new System.Drawing.Point(448, 658);
             this.picInfo.Name = "picInfo";
             this.picInfo.Size = new System.Drawing.Size(32, 32);
