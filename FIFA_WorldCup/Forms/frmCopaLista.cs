@@ -168,6 +168,19 @@ namespace FIFA_WorldCup.Forms
             frm.AbrirCopaDetalhe(CopaID);
         }
 
+        private void grdMain_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            //Percorre todas as linhas da grid
+            foreach(DataGridViewRow iLinha in grdMain.Rows)
+            {
+                //Se encontrar uma linha com o Status "corrente" deixa esta linha selecionada
+                string Status = iLinha.Cells["Status"].Value.ToString();
+                if(Status == "Corrente")
+                {
+                    iLinha.Selected = true;
+                }
+            }
 
+        }
     }
 }

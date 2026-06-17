@@ -97,6 +97,7 @@
             this.grdMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdMain.Size = new System.Drawing.Size(876, 504);
             this.grdMain.TabIndex = 2;
+            this.grdMain.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.grdMain_DataBindingComplete);
             // 
             // ID
             // 
