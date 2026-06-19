@@ -30,6 +30,7 @@
         {
             this.btCancelar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpHoraEvento = new System.Windows.Forms.DateTimePicker();
             this.imgTeamB = new System.Windows.Forms.PictureBox();
             this.imgTeamA = new System.Windows.Forms.PictureBox();
             this.chkDesempate = new System.Windows.Forms.CheckBox();
@@ -47,12 +48,11 @@
             this.lblLocal = new System.Windows.Forms.Label();
             this.lblGrupo = new System.Windows.Forms.Label();
             this.txtGrupo = new System.Windows.Forms.TextBox();
-            this.dataEvento = new System.Windows.Forms.DateTimePicker();
+            this.dtpDataEvento = new System.Windows.Forms.DateTimePicker();
             this.lblData = new System.Windows.Forms.Label();
             this.ddlLocal = new System.Windows.Forms.ComboBox();
             this.btSalvar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.horaEvento = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgTeamB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgTeamA)).BeginInit();
@@ -79,7 +79,7 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.horaEvento);
+            this.groupBox1.Controls.Add(this.dtpHoraEvento);
             this.groupBox1.Controls.Add(this.imgTeamB);
             this.groupBox1.Controls.Add(this.imgTeamA);
             this.groupBox1.Controls.Add(this.chkDesempate);
@@ -91,7 +91,7 @@
             this.groupBox1.Controls.Add(this.lblLocal);
             this.groupBox1.Controls.Add(this.lblGrupo);
             this.groupBox1.Controls.Add(this.txtGrupo);
-            this.groupBox1.Controls.Add(this.dataEvento);
+            this.groupBox1.Controls.Add(this.dtpDataEvento);
             this.groupBox1.Controls.Add(this.lblData);
             this.groupBox1.Controls.Add(this.ddlLocal);
             this.groupBox1.Location = new System.Drawing.Point(44, 99);
@@ -99,6 +99,15 @@
             this.groupBox1.Size = new System.Drawing.Size(879, 482);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
+            // 
+            // dtpHoraEvento
+            // 
+            this.dtpHoraEvento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpHoraEvento.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpHoraEvento.Location = new System.Drawing.Point(230, 32);
+            this.dtpHoraEvento.Name = "dtpHoraEvento";
+            this.dtpHoraEvento.Size = new System.Drawing.Size(96, 23);
+            this.dtpHoraEvento.TabIndex = 27;
             // 
             // imgTeamB
             // 
@@ -261,14 +270,14 @@
             this.txtGrupo.Size = new System.Drawing.Size(252, 24);
             this.txtGrupo.TabIndex = 16;
             // 
-            // dataEvento
+            // dtpDataEvento
             // 
-            this.dataEvento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataEvento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dataEvento.Location = new System.Drawing.Point(89, 33);
-            this.dataEvento.Name = "dataEvento";
-            this.dataEvento.Size = new System.Drawing.Size(118, 23);
-            this.dataEvento.TabIndex = 15;
+            this.dtpDataEvento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDataEvento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDataEvento.Location = new System.Drawing.Point(89, 33);
+            this.dtpDataEvento.Name = "dtpDataEvento";
+            this.dtpDataEvento.Size = new System.Drawing.Size(118, 23);
+            this.dtpDataEvento.TabIndex = 15;
             // 
             // lblData
             // 
@@ -310,15 +319,6 @@
             this.lblTitulo.TabIndex = 16;
             this.lblTitulo.Text = "Edição de Partida da Copa de ";
             // 
-            // horaEvento
-            // 
-            this.horaEvento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.horaEvento.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.horaEvento.Location = new System.Drawing.Point(230, 32);
-            this.horaEvento.Name = "horaEvento";
-            this.horaEvento.Size = new System.Drawing.Size(96, 23);
-            this.horaEvento.TabIndex = 27;
-            // 
             // frmPartidaDetalhe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -356,7 +356,7 @@
         private System.Windows.Forms.Label lblLocal;
         private System.Windows.Forms.Label lblGrupo;
         private System.Windows.Forms.TextBox txtGrupo;
-        private System.Windows.Forms.DateTimePicker dataEvento;
+        private System.Windows.Forms.DateTimePicker dtpDataEvento;
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.ComboBox ddlSelecaoB;
         private System.Windows.Forms.NumericUpDown scoreB;
@@ -371,6 +371,6 @@
         private System.Windows.Forms.Label lblSelecaoDesempateA;
         private System.Windows.Forms.PictureBox imgTeamA;
         private System.Windows.Forms.PictureBox imgTeamB;
-        private System.Windows.Forms.DateTimePicker horaEvento;
+        private System.Windows.Forms.DateTimePicker dtpHoraEvento;
     }
 }

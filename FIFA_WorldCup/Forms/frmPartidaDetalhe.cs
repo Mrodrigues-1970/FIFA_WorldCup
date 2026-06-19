@@ -48,9 +48,9 @@ namespace FIFA_WorldCup.Forms
             RecuperaAno(retorno.CopaID);
             lblTitulo.Text = "Edição de Partida do grupo " + retorno.Nome + " da Copa " + oCopa.Nome;
             txtGrupo.Text = retorno.Nome;
-            dataEvento.MinDate = oCopa.Data_Inicial;
-            dataEvento.MaxDate = oCopa.Data_Final;
-            dataEvento.Value = oCopa.Data_Inicial;
+            dtpDataEvento.MinDate = oCopa.Data_Inicial;
+            dtpDataEvento.MaxDate = oCopa.Data_Final;
+            dtpDataEvento.Value = oCopa.Data_Inicial;
         }
 
         private void CarregaLocais()
@@ -76,7 +76,6 @@ namespace FIFA_WorldCup.Forms
             ddlSelecaoB.DisplayMember = "NOME";
             ddlSelecaoB.ValueMember = "ID";
             ddlSelecaoB.DataSource = lista2;
-
         }
 
         private void chkDesempate_Click(object sender, EventArgs e)
@@ -127,7 +126,8 @@ namespace FIFA_WorldCup.Forms
             Partida oPartida = rn.Sel(gPartidaID);
             if(oPartida != null)
             {
-                dataEvento.Value = oPartida.Data;
+                dtpDataEvento.Value = oPartida.Data;
+                dtpHoraEvento.Value = oPartida.Data;
                 ddlLocal.SelectedValue = oPartida.Local;
                 ddlSelecaoA.SelectedValue = oPartida.SelecaoID_A;
                 ddlSelecaoB.SelectedValue = oPartida.SelecaoID_B;
@@ -158,7 +158,10 @@ namespace FIFA_WorldCup.Forms
         {
             Partida oPartida = new Partida();
             oPartida.ID = gPartidaID;
-            oPartida.Data = dataEvento.Value;
+            DateTime dataPartida = dtpDataEvento.Value.Date;
+            TimeSpan horario = dtpHoraEvento.Value.TimeOfDay;
+            DateTime dataHoraPartida = dataPartida.Add(horario);
+            oPartida.Data = dataHoraPartida;
             oPartida.GrupoID = gGrupoID;
             oPartida.Local = Convert.ToInt16(ddlLocal.SelectedValue);
             oPartida.SelecaoID_A = Convert.ToInt16(ddlSelecaoA.SelectedValue);
