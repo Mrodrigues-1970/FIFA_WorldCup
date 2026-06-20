@@ -250,7 +250,7 @@ namespace FIFA_WorldCup.Dal
             oSB.AppendLine("INSERT INTO PARTIDA (");
             oSB.AppendLine(" DATA, LOCAL_ID, GRUPO_ID, SELECAO_A, GOLS_A, SELECAO_B, GOLS_B ");
             oSB.AppendLine(") VALUES (");
-            oSB.AppendLine("'" + vPartida.Data.ToShortDateString() + "'");
+            oSB.AppendLine("'" + vPartida.Data.ToString("MM/dd/yyyy HH:mm:ss") + "'");
             oSB.AppendLine("," + vPartida.Local);
             oSB.AppendLine("," + vPartida.GrupoID);
             oSB.AppendLine("," + vPartida.SelecaoID_A);
@@ -265,7 +265,7 @@ namespace FIFA_WorldCup.Dal
         {
             oSB.Length = 0;
             oSB.AppendLine("UPDATE PARTIDA SET ");
-            oSB.AppendLine("DATA = '" + vPartida.Data.ToShortDateString() + "'");
+            oSB.AppendLine("DATA = '" + vPartida.Data.ToString("MM/dd/yyyy HH:mm:ss") + "'");
             oSB.AppendLine(",LOCAL_ID = " + vPartida.Local);
             oSB.AppendLine(",GRUPO_ID = " + vPartida.GrupoID);
             oSB.AppendLine(",SELECAO_A = " + vPartida.SelecaoID_A);
